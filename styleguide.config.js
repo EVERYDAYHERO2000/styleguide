@@ -39,12 +39,6 @@ module.exports = {
 		},
 		module: {
 			rules: [
-                //{
-                //    enforce: 'pre',
-                //    test: /\.(js|vue)$/,
-                //    loader: 'eslint-loader',
-                //    exclude: /node_modules/
-                //},
 				{
 					test: /\.vue$/,
 					loader: 'vue-loader'
@@ -88,9 +82,6 @@ module.exports = {
 
 		plugins: [
             new vueLoader.VueLoaderPlugin(),
-            //new StyleLintPlugin({
-            //    files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
-            //})
         ].concat(
 			process.argv.includes('--analyze') ? [new BundleAnalyzerPlugin()] : []
 		)

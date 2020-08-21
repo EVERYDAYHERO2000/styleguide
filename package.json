@@ -25,7 +25,8 @@
   },
   "scripts": {
     "styleguide": "vue-styleguidist server",
-    "styleguide:build": "vue-styleguidist build"
+    "styleguide:build": "vue-styleguidist build",
+    "styleguide:lint": "stylelint \"src/**/*.{vue,htm,html,css,sss,less,scss,sass}\" --syntax scss"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
