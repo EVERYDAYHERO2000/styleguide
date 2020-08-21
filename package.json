@@ -1,5 +1,5 @@
 {
-  "name": "vue-styleguidist-example-basic",
+  "name": "styleguide",
   "version": "4.0.0",
   "description": "Example of vue-styleguidist tested on IE11, please have a look at the webpack config of babel",
   "keywords": [
@@ -8,10 +8,10 @@
     "IE11"
   ],
   "private": true,
-  "homepage": "https://github.com/vue-styleguidist/vue-styleguidist",
+  "homepage": "https://github.com/EVERYDAYHERO2000/styleguide.git",
   "repository": {
     "type": "git",
-    "url": "git://github.com/styleguidist/vue-styleguidist.git"
+    "url": "git://github.com/EVERYDAYHERO2000/styleguide.git"
   },
   "license": "MIT",
   "engines": {
