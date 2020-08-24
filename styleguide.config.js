@@ -30,7 +30,7 @@ module.exports = {
 			componentFileName.toLowerCase() === 'index' ? path.basename(path.dirname(componentPath)) : componentFileName
 		return `import ${name} from '${componentPath.replace(/^src\//, 'my-library/dist/')}'`
 	},
-	version: '1.1.1',
+    version: '1.1.1',
 	webpackConfig: {
 		resolve: {
 			alias: {
@@ -86,8 +86,8 @@ module.exports = {
 			process.argv.includes('--analyze') ? [new BundleAnalyzerPlugin()] : []
 		)
 	},
-	usageMode: 'expand',
-	exampleMode: 'expand',
+	usageMode: 'collapse',
+	exampleMode: 'collapse',
 	compilerConfig: {
 		target: { ie: 11 }
 	},
