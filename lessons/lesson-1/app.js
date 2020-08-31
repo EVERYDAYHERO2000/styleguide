@@ -1,3 +1,6 @@
+
+import Calculator from './calculator.js';
+
 const temp = {
     salary : 0,
     type : 'gross'
@@ -25,11 +28,11 @@ $switcher.classList.add('switcher');
 const options = [
     {
         value : 'gross',
-        text : 'Зарплата до вычета налогов (гросс)'
+        title : 'Зарплата до вычета налогов (гросс)'
     },
     {
         value : 'net',
-        text : 'Зарплата на руки (нетт)'
+        title : 'Зарплата на руки (нетт)'
     }
 ];
 
@@ -37,7 +40,7 @@ for (let opt in options) {
 
     const $option = document.createElement('option');
     $option.value = options[opt].value;
-    $option.innerText = options[opt].text;
+    $option.innerText = options[opt].title;
     
     $switcher.append($option);
 
@@ -127,3 +130,4 @@ function formatUnit(value) {
 
 
 $body.append($form, $result);
+
