@@ -44,3 +44,12 @@ body {
 
 }
 
+.cost__first {
+    font-weight: 600;
+}
+
+.cost__last {
+    font-size: 14px;
+    opacity: 0.75;
+}
+

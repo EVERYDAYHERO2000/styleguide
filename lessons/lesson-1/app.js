@@ -15,6 +15,7 @@ const $salary = document.createElement('input');
 const $switcher = document.createElement('select');
 
 $salary.setAttribute('type', 'number');
+$salary.setAttribute('placeholder','Укажите зарплату в рублях');
 $salary.classList.add('salary');
 
 $salary.addEventListener('keyup', function(event){
@@ -92,7 +93,7 @@ for (let key in resultKeys) {
     $resultItem__value.classList.add('result-item__value');
 
     $resultItem__title.innerText = resultKeys[key];
-    $resultItem__value.innerText = calculator.result[key];
+    $resultItem__value.innerHTML = formatUnit( calculator.result[key] ) + ' ₽';
 
     $resultItem.append($resultItem__title, $resultItem__value);
     $result.append($resultItem);
@@ -110,7 +111,7 @@ function updateResult (salary, type) {
         const dataName = $el.getAttribute('data-name');
         const value = calculator.calc(salary, type).result[dataName];
 
-        $resultItem__value.innerHTML = formatUnit(value) + ' руб.';
+        $resultItem__value.innerHTML = formatUnit(value) + ' ₽';
 
     }
 
