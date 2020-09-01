@@ -14,7 +14,6 @@ const $result = document.createElement('div');
 const $salary = document.createElement('input');
 const $switcher = document.createElement('select');
 
-
 $salary.setAttribute('type', 'number');
 $salary.setAttribute('placeholder','Укажите зарплату в рублях');
 $salary.classList.add('salary');
