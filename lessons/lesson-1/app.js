@@ -60,25 +60,25 @@ $result.classList.add('result');
 
 const resultKeys = {
     gross              : 'До вычета налогов',
-    grossPerPeriod     : 'До вычета налогов за период',
-    net                : 'После вычета налогов (на руки)',
-    netPerPeriod       : 'После вычета налогов за период',
+    grossPerPeriod     : 'До вычета налогов за период (год)',
+    net                : 'После вычета налогов, на руки',
+    netPerPeriod       : 'После вычета налогов за период (год)',
     ops                : 'Пенсионное страхование',
-    opsPerPeriod       : 'Пенсионное за период',
+    opsPerPeriod       : 'Пенсионное за период (год)',
     oms                : 'Медицинское страхование',
-    omsPerPeriod       : 'Медицинское страхование за период',
+    omsPerPeriod       : 'Медицинское страхование за период (год)',
     fss                : 'Социальное страхование' ,
-    fssPerPeriod       : 'Социальное страхование за период',
+    fssPerPeriod       : 'Социальное страхование за период (год)',
     insurance          : 'Страховка',
-    insurancePerPeriod : 'Страховка за период',
+    insurancePerPeriod : 'Страховка за период (год)',
     ndfl               : 'НДФЛ',
     ndflPerPeriod      : 'НДФЛ за период',
     fot                : 'Страховая часть',
-    fotPerPeriod       : 'Страховая часть за период',
+    fotPerPeriod       : 'Страховая часть за период (год)',
     nalogAll           : 'Все налоги',
-    nalogAllPerPeriod  : 'Все налоги за период',
+    nalogAllPerPeriod  : 'Все налоги за период (год)',
     fullCost           : 'Вся стоимость',
-    fullCostPerPeriod  : 'Вся стоимость за период'
+    fullCostPerPeriod  : 'Вся стоимость за период (год)'
 }
 
 for (let key in resultKeys) {
