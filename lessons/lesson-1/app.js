@@ -1,5 +1,7 @@
 
 import Calculator from './calculator.js';
+import Input from './components/input/input.js';
+import Select from './components/select/select.js';
 
 const temp = {
     salary : 0,
@@ -9,53 +11,61 @@ const temp = {
 const calculator = new Calculator(temp.salary, temp.type);
 
 const $body = document.querySelector('body');
+
 const $form = document.createElement('div');
+
 const $result = document.createElement('div');
-const $salary = document.createElement('input');
-const $switcher = document.createElement('select');
 
+new Input({
 
-$salary.setAttribute('type', 'number');
-$salary.setAttribute('placeholder','Укажите зарплату в рублях');
-$salary.classList.add('salary');
+    'type' : 'number',
+    'placeholder' : 'Укажите зарплату в рублях'
 
-$salary.addEventListener('keyup', function(event){
-    temp.salary = (this.value.length) ? +(this.value) : 0;
+}).keyup( function(elem, event){
 
+    temp.salary = (elem.value.length) ? +(elem.value) : 0;
     updateResult(temp.salary, temp.type);
-})
 
-$switcher.classList.add('switcher');
+} ).append($form);
 
-const options = [
-    {
-        value : 'gross',
-        title : 'Зарплата до вычета налогов (гросс)'
-    },
-    {
-        value : 'net',
-        title : 'Зарплата на руки (нетт)'
+
+new Select(
+    [
+        {
+            value: 'gross',
+            title: 'Зарплата до вычета налогов (гросс)'
+        },
+        {
+            value: 'net',
+            title: 'Зарплата на руки (нетт)'
+        },
+        {
+            value: 'simple',
+            title: 'Третья смешная'
+        }
+    ]
+).change(  
+    function(elem) {
+
+        temp.type = elem.options[elem.selectedIndex].value;
+        updateResult(temp.salary, temp.type);
+
     }
-];
+).append($form);
 
-for (let opt in options) {
 
-    const $option = document.createElement('option');
-    $option.value = options[opt].value;
-    $option.innerText = options[opt].title;
-    
-    $switcher.append($option);
 
-}
 
-$switcher.addEventListener('change', function(event){
-    temp.type = this.options[this.selectedIndex].value;
 
-    updateResult(temp.salary, temp.type);
-});
+
+
+
+
+
 
 $form.classList.add('form');
-$form.append($salary, $switcher);
+
+
 
 $result.classList.add('result');
 

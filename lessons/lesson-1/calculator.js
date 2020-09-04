@@ -58,14 +58,16 @@ const Calculator = class {
 
         this.options.period = period || this.options.period;
 
-        if ( type == 'gross' ) {
+        if ( type === 'gross' ) {
             this.result.gross = value;
             this.result.net = Unit( value - ( Percentage( value, this.options.ndfl ) ) );
 
-        } else if ( type == 'net' ) {
+        } else if ( type === 'net' ) {
             this.result.net = value;
             this.result.gross = Unit( value + ( Percentage( value, this.options.ndfl ) ) );
 
+        } else {
+            console.log('ERROR');
         }
             
         this.result.netPerPeriod       = Unit( this.result.net * this.options.period );
@@ -132,5 +134,7 @@ const Calculator = class {
 
 
 } 
+
+
 
 export default Calculator;
