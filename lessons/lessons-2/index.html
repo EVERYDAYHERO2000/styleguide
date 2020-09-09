@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <meta charset="utf-8" />
+    <body>
+
+    <script>
+
+    
+    function timer ( iteration, callback ) {
+
+        setTimeout( function (iteration) {
+            
+            iteration = iteration - 1;
+
+            if ( iteration > 0) {
+
+                if (callback) callback(iteration);
+
+                timer (iteration, callback);
+
+            }    
+
+
+
+        }, 100, iteration);
+
+    }
+
+    function consoleLog (c) {
+
+        console.log(`${c} is called!`);
+
+        console.log(c + ' is called!');
+
+    }
+
+    timer(15, consoleLog);
+    
+
+
+
+
+
+
+    </script>   
+    </body> 
+</html>    
