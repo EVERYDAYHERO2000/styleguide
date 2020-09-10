@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+
+
+/*
+function foo() {
+    console.log('hello world')
+}
+*/
+
+
+
+const box = function (height, width, x, y) {
+
+    const _this = this;
+
+    this.height = height;
+    this.width = width;
+    this.x = x;
+    this.y = y;
+
+    this.create = function() {
+
+        const div = document.createElement('div');
+        const body = document.querySelector('body'); 
+
+        div.style.width = _this.width + 'px'
+        div.style.height = _this.height + 'px'
+        div.style.position = 'absolute';
+        div.style.left = _this.x + 'px';
+        div.style.top = _this.y + 'px';
+
+
+        const colors = ['red', 'pink', '#ccc', 'blue', '#fafafa', '#999', 'black'];
+
+        div.style.backgroundColor = colors[randomInteger(0, 6)];
+
+        body.append(div);
+
+        _this.div = div;
+
+        return _this;
+
+    }
+
+    this.move = function(offset) {
+
+        const x = +(_this.div.style.left.replace('px','')) + offset;
+        const y = +(_this.div.style.top.replace('px','')) + offset;
+
+        _this.div.style.left = x + 'px';
+        _this.div.style.top = y + 'px';
+
+        return _this
+
+    }
+
+
+    this.create();
+
+    return this;
+
+}
+
+
+
+
+
+const boxes = [];
+
+for (let i = 0; i < 100; i++) {
+
+    const width = randomInteger(50,150);
+    const height = randomInteger(50,150);
+    const x = randomInteger(0,window.outerWidth);
+    const y = randomInteger(0,window.outerHeight);
+
+
+    boxes.push(new box(width, height, x, y));
+}
+
+
+
+
+(function(){
+
+    setInterval(function(){
+
+        for (let i = 0; i < boxes.length; i++) {
+
+            const offset = randomInteger(100, 1000);
+
+            boxes[i].move(offset / 100);
+
+        }    
+
+    },100);
+
+})()
+
+
+
+
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
