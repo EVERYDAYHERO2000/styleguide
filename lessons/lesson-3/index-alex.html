@@ -1,0 +1,216 @@
+<body></body>
+<script>
+
+const box = function (height, width, x, y, borderRadius) {
+
+    const _this = this;
+
+    this.height = height;
+    this.width = width;
+    this.x = {
+        val : x || 0,
+        direction : 'forward'
+    };  
+
+    this.y = {
+        val : y || 0,
+        direction : 'forward'
+    }; 
+
+    this.borderRadius = borderRadius;
+
+    this.click = function (callback) {
+
+        _this.div.addEventListener ('click', function (event) {
+            callback(event, _this) 
+            }   
+        )
+        return _this;
+
+    }
+
+    this.create = function() {
+
+        const div = document.createElement('div');
+        const body = document.querySelector('body'); 
+
+        div.style.width = _this.width + 'px';
+        div.style.height = _this.height + 'px';
+        div.style.position = 'absolute';
+        div.style.left = _this.x.val + 'px';
+        div.style.top = _this.y.val + 'px';
+        div.style.borderRadius = _this.borderRadius + 'px';
+
+        const colors = ['#D3FFB4', '#323855', '#7BFF97', '#D7D8FF', '#004B50', '#FD8874', '#F0F0E5', '#6951FF', '#6951FF', '#00E087'];
+
+        div.style.backgroundColor = colors[randomInteger(0, 9)];
+
+        const borderRadius = ['0px', '8px', '100%'];
+
+        div.style.borderRadius = borderRadius[randomInteger(0, 1)];
+
+        if (width === height) {
+            div.style.borderRadius = borderRadius[(2)];
+        }
+
+        body.append(div);
+
+        _this.div = div;
+
+        return _this;
+
+    }
+
+    this.move = function(offsetX, offsetY) {
+
+        const x = +(_this.div.style.left.replace('px','')) + offsetX;
+        const y = +(_this.div.style.top.replace('px','')) + offsetY;
+
+        _this.x.val = x;
+        _this.y.val = y;
+
+        _this.div.style.left = x + 'px';
+        _this.div.style.top = y + 'px';
+
+        return _this
+
+    }
+
+    this.scale = function(change) {
+
+        const width = +(_this.div.style.width.replace('px','')) + change;
+        const height = +(_this.div.style.height.replace('px','')) + change;
+
+        _this.div.style.width = width + 'px';
+        _this.div.style.height = height + 'px';
+
+        return _this
+
+    }
+    
+
+    this.create();
+
+    return this;
+
+}
+
+const boxes = [];
+
+const body = document.querySelector('body');
+
+body.addEventListener ('click', function(event) {
+
+    const myBox = new box(100, 100, event.pageX, event.pageY);
+
+    myBox.click(function (event2, elem) {
+
+       elem.div.remove();
+
+    })
+
+    boxes.push( myBox );
+})
+
+for (let i = 0; i < 100; i++) {
+
+    const width = randomInteger(50,150);
+    const height = randomInteger(50,150);
+    const x = randomInteger(0,window.outerWidth);
+    const y = randomInteger(0,window.outerHeight);
+  
+    const myBox = new box(width, height, x, y);
+
+    myBox.click(function (event, elem) {
+
+       elem.div.remove();
+
+    })
+
+    boxes.push( myBox );
+
+    
+}
+
+(function(){
+
+    setInterval(function(){
+
+        for (let i = 0; i < boxes.length; i++) {
+
+            let offset = 1;
+
+            const directions = ['backward', 'forward'];
+
+
+
+            if (boxes[i].x.val > window.outerWidth) {
+                
+                boxes[i].x.direction = 'backward';
+                boxes[i].y.direction = directions[ random(0, 1) ];
+
+    
+            }
+
+            if (boxes[i].y.val > window.outerHight) {
+                
+                boxes[i].y.direction = 'backward';
+                boxes[i].x.direction = directions[ random(0, 1) ];
+            }
+
+            
+
+        
+            if (boxes[i].x.val <= 0) {
+                
+                boxes[i].x.direction = 'backward';
+                boxes[i].y.direction = directions[ random(0, 1) ];
+            }
+
+            if (boxes[i].y.val <= 0) {
+                
+                boxes[i].y.direction = 'backward';
+                boxes[i].x.direction = directions[ random(0, 1) ];
+            }
+
+            
+
+            //if (boxes[i].x.direction == 'forward') {
+
+                boxes[i].x.val = (boxes[i].x.direction == 'backward') ? offset : -offset;
+                boxes[i].y.val = (boxes[i].y.direction == 'backward') ? offset : -offset
+
+            //} 
+
+            //if (boxes[i].y.direction == 'forward') {
+
+                boxes[i].y.val = (boxes[i].y.direction == 'backward') ? offset : -offset;
+                boxes[i].x.val = (boxes[i].x.direction == 'backward') ? offset : -offset;
+
+            //} 
+
+
+            
+
+            boxes[i].move( boxes[i].x.val, boxes[i].y.val );
+
+            const change = randomInteger(-offset, offset);
+
+            boxes[i].scale(change);
+
+        }    
+
+    },10);
+
+})()
+
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
+
+function random(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+</script>>
