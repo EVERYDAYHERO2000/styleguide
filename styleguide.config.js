@@ -16,7 +16,7 @@ const transpileDependencies = [
 	'@znck[\\\\/]prop-types'
 ]
 
-const docSiteUrl = process.env.DEPLOY_PRIME_URL || ''
+const docSiteUrl = process.env.DEPLOY_PRIME_URL || '/'
 
 module.exports = {
 	title: 'UI',
@@ -26,8 +26,7 @@ module.exports = {
 	defaultExample: true,
 	getComponentPathLine(componentPath) {
 		const componentFileName = path.basename(componentPath, '.vue')
-		const name =
-			componentFileName.toLowerCase() === 'index' ? path.basename(path.dirname(componentPath)) : componentFileName
+		const name = componentFileName.toLowerCase() === 'index' ? path.basename(path.dirname(componentPath)) : componentFileName
 		return `import ${name} from '${componentPath.replace(/^src\//, 'my-library/dist/')}'`
 	},
     version: '1.1.1',
@@ -74,9 +73,24 @@ module.exports = {
                         'vue-style-loader', 
                         'style-loader', 
                         'css-loader', 
-                        'sass-loader'
+                        'sass-loader',
                     ]
-				}
+				},
+				{
+					test: /\.css$/i,
+					loader: 'css-loader',
+					options: {
+						url: false,
+					},
+				},
+				{
+					test: /\.(svg|eot|woff|ttf|png|jpe?g|gif)$/i,
+					use: [
+					  {
+						loader: 'file-loader',
+					  },
+					],
+				},
 			]
 		},
 

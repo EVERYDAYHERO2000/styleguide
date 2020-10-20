@@ -1,122 +1,190 @@
 <template>
-	<div class="Button">
-		<button class="button" :style="{ color: color, fontSize: fontSize }" @click.prevent="onClick">
-			<!-- @slot content of the button -->
-			<slot />
-		</button>
-	</div>
+    <Btn 
+        v-bind:label="label" 
+        v-bind:badge="badge" 
+        v-bind:class="[classType, classSize, classRounded, classStyled, classRaised]" 
+        v-bind:icon="classIcon" 
+        v-bind:iconPos="iconPos"
+        v-bind:disabled="disabled" />
 </template>
 
 <script>
-	import VueTypes from 'vue-types'
-	import PropTypes from '@znck/prop-types'
-	import { logger, myProps } from '../../mixins/loggerMixin'
+    import {Btn} from '../../prime';
+
 	import '../../variables/variables.scss'
 
 	/**
-	 * The only true button.
-	 * @displayName Best Button
+	 * Кнопка
+	 * @displayName Button
 	 */
 	export default {
 		name: 'Button',
-		mixins: [logger, myProps],
 		props: {
 			/**
-			 * A test for default function Object
+			 * Текст на кнопке
 			 */
-			propObjectDefault: {
-				type: Object,
-				default: () => ({})
-			},
-			/**
-			 * A test for default function Array
-			 */
-			propArrayDefault: {
-				type: Array,
-				default: () => [1, 2, 3]
-			},
-			/**
-			 * A test for default function more complex
-			 */
-			propComplexDefault: {
-				type: Array,
-				default: () => {
-					if (typeof logger.mounted === 'function') {
-						return []
-					} else {
-						return undefined
-					}
-				}
-			},
-			/**
-			 * The color for the button.
+			label: {
+				type: String,
+				default: 'Button'
+            },
+            /**
+			 * Цвет кнопки
+             * @values primary, secondary, success, info, warning, help, danger
 			 */
 			color: {
 				type: String,
-				default: '#333'
-			},
-			/**
-			 * The shape of my heart
+				default: 'primary'
+            },
+            /**
+			 * Стиль кнопки
+             * @values fill, outline, blank
 			 */
-			shape: PropTypes.shape({
-				color: PropTypes.string,
-				fontSize: PropTypes.number
-			}),
+            styled: {
+                type: String,
+                default: 'fill'
+            },
 			/**
-			 * The size of the button
-			 * @values small, normal, large
+			 * Счетчик на кнопке
 			 */
-			size: VueTypes.string.def('normal'),
+			badge: {
+                type: Number,
+                default: null
+            },
+            /**
+			 * Иконка
+             * @values cross, check, user, search
+			 */
+            icon: {
+                type: String,
+                default: ''
+            },
+            /**
+			 * Расположение иконки
+             * @values left, right
+			 */
+            iconPos: {
+                type: String,
+                default: 'left'
+            },
 			/**
-			 * Gets called when the user clicks on the button
-			 * @ignore
+			 * Размер кнопки
+			 * @values s, m, l
 			 */
-			onClick: {
-				type: Function,
-				default: event => {
-					console.log('You have clicked me!', event.target)
-				}
-			}
+			size: {
+                type: String,
+                default: 'm'
+            },
+            /**
+			 * Круглая
+			 */
+            rounded: {
+                type: Boolean,
+                default: false
+            },
+            /**
+			 * Заблокированная
+			 */
+            disabled: {
+                type: Boolean,
+                default: false
+            },
+            /**
+			 * Рельефная
+			 */
+            raised: {
+                type: Boolean,
+                default: false
+            },
 		},
 		computed: {
-			fontSize() {
-				let size
-				switch (this.size) {
-					case 'small':
-						size = '10px'
-						break
-					case 'normal':
-						size = '14px'
-						break
-					case 'large':
-						size = '18px'
-						break
-				}
-				return size
-			}
+            classSize() {
+                let size;
+                switch (this.size) {
+                    case 's':
+                        size = 'p-button-sm';
+                        break;
+                    case 'l':
+                        size = 'p-button-lg';
+                        break;    
+                    case 'm':
+                        size = 'p-button';
+                        break;    
+                }
+                return size;
+            },
+            classIcon() {
+                let icon;
+                switch (this.icon) {
+                    case 'cross':
+                        icon = 'pi pi-times';
+                        break;
+                    case 'user':
+                        icon = 'pi pi-user'; 
+                        break;
+                    case 'check':
+                        icon = 'pi pi-check';
+                        break;
+                    case 'search':
+                        icon = 'pi pi-search';
+                        break;
+                }
+                return icon
+            },
+            classRaised() {
+                return (this.raised) ? 'p-button-raised' : ''
+            },
+            classStyled() {
+                let styled;
+                switch (this.styled) {
+                    case 'fill':
+                        styled = '';
+                        break;
+                    case 'outline':
+                        styled = 'p-button-outlined';
+                        break;
+                    case 'blank':
+                        styled = 'p-button-text';
+                        break;        
+                }
+                return styled;
+            },
+            classRounded() {
+                return (this.rounded) ? 'p-button-rounded' : ''
+            },
+            classType() {
+                let type;
+                switch (this.color) {
+                    case 'primary':
+                        type = '';
+                        break;
+                    case 'secondary':
+                        type = 'p-button-secondary'; 
+                        break;
+                    case 'success':
+                        type = 'p-button-success';
+                        break;
+                    case 'info':
+                        type = 'p-button-info';
+                        break;
+                    case 'warning':
+                        type = 'p-button-warning';
+                        break;  
+                    case 'help':
+                        type = 'p-button-help';
+                        break;
+                    case 'danger':
+                        type = 'p-button-danger';
+                        break;            
+                }
+                return type
+            },
 		}
 	}
 </script>
 
 <style lang="scss" scope>
+
 	@import '../../variables/variables.scss';
-
-	.button {
-		padding: 0.5rem 1.5rem;
-		background-color: $base-color;
-		border: 1px solid currentColor;
-		border-radius: 0.3rem;
-		text-align: center;
-		vertical-align: middle;
-		cursor: pointer;
-	}
-
-	.checks {
-		background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%),
-			linear-gradient(-45deg, #f5f5f5 25%, transparent 25%),
-			linear-gradient(45deg, transparent 75%, #f5f5f5 75%),
-			linear-gradient(-45deg, transparent 75%, #f5f5f5 75%);
-		background-size: 16px 16px;
-		background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-	}
+    @import '../../../node_modules/primeicons/primeicons.css';
+	
 </style>

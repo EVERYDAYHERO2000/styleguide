@@ -1,8 +1,10 @@
 export default {
 	Playground: {
 		preview: {
-			paddingLeft: 0,
-			paddingRight: 0,
+			paddingTop: 16,
+			paddingBottom: 16,
+			paddingLeft: 16,
+			paddingRight: 16,
 			borderRadius: 0,
 		},
 	},
