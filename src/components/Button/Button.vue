@@ -1,5 +1,5 @@
 <template>
-    <Btn 
+    <PrimeButton
         v-bind:label="label" 
         v-bind:badge="badge" 
         v-bind:class="[classType, classSize, classRounded, classStyled, classRaised]" 
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import {Btn} from '../../prime';
+    import {PrimeButton} from '../../prime';
 
 	import '../../variables/variables.scss'
 
@@ -52,7 +52,7 @@
             },
             /**
 			 * Иконка
-             * @values cross, check, user, search
+             * @values cross, check, user, search, ellipsis-v, pi-ellipsis-h
 			 */
             icon: {
                 type: String,
@@ -127,6 +127,12 @@
                     case 'search':
                         icon = 'pi pi-search';
                         break;
+                    case 'ellipsis-v':
+                        icon = 'pi pi-ellipsis-v';
+                        break;
+                    case 'ellipsis-h':
+                        icon = 'pi pi-ellipsis-h';
+                        break;        
                 }
                 return icon
             },

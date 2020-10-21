@@ -1,7 +1,7 @@
 <template>
     <div 
         class="button-group" 
-        v-bind:class="[classWidth, classSplit]">
+        v-bind:class="[classWidth, classJoin]">
     <!-- @slot Слот для кнопок -->    
     <slot></slot>
     </div>
@@ -25,9 +25,9 @@
 				default: 'auto'
             },
             /**
-             * Разделить/склеить кнопки
+             * Склеить кнопки
              */
-            split: {
+            join: {
                  type: Boolean,
                  default: false
              }
@@ -45,8 +45,8 @@
                 }
                 return width;
             },
-            classSplit() {
-                return (this.split) ? 'button-group_split' : '';
+            classJoin() {
+                return (this.join) ? 'button-group_join' : '';
             }
         }        
     }     
@@ -81,14 +81,14 @@
 
         }
 
-        &_split {
+        &_join {
 
             .p-button  {
                 margin: 0;  
                 border-radius: 0;  
             }
             
-            .p-button-outlined:enabled, .p-button-outlined:enabled:hover {
+            .p-button.p-button-outlined:enabled, .p-button.p-button-outlined:enabled:hover {
                 border-right: 0px
             }
             
@@ -102,7 +102,7 @@
                 border-radius: 0 3px 3px 0;
             }
 
-            .p-button-outlined:enabled:last-child, .p-button-outlined:enabled:hover:last-child {
+            .p-button.p-button-outlined:enabled:last-child, .p-button.p-button-outlined:enabled:hover:last-child {
                 border-right: 1px solid;
             }
 

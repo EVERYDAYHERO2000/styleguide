@@ -1,12 +1,13 @@
 import Vue from 'vue'
 
-import PrimeBtn from 'primevue/button';
-import PrimeCard from 'primevue/card';
+import PButton from 'primevue/button';
+import PCard from 'primevue/card';
 
 import '../node_modules/primevue/resources/primevue.css';
 import '../node_modules/primevue/resources/themes/nova/theme.css';
 
+export const PrimeButton = Vue.component('PrimeButton', PButton);
+export const PrimeCard = Vue.component('PrimeCard', PCard);
+
 Vue.prototype.$primevue = {ripple: true};
 
-export const Btn = Vue.component('Btn', PrimeBtn);
-export const Card = Vue.component('Card', PrimeCard);
