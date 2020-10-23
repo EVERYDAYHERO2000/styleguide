@@ -2,7 +2,7 @@
     <PrimeButton
         v-bind:label="label" 
         v-bind:badge="badge" 
-        v-bind:class="[classType, classSize, classRounded, classStyled, classRaised]" 
+        v-bind:class="[classColor, classSize, classRounded, classStyled, classRaised]" 
         v-bind:icon="classIcon" 
         v-bind:iconPos="iconPos"
         v-bind:disabled="disabled" />
@@ -157,7 +157,7 @@
             classRounded() {
                 return (this.rounded) ? 'p-button-rounded' : ''
             },
-            classType() {
+            classColor() {
                 let type;
                 switch (this.color) {
                     case 'primary':
@@ -184,7 +184,7 @@
                 }
                 return type
             },
-		}
+        },
 	}
 </script>
 

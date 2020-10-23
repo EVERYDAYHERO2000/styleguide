@@ -1,7 +1,7 @@
 ```html
 <ButtonGroup buttonsWidth="flex">
-    <Button color="secondary" label="Отменить" />
-    <Button label="Сохранить" />
+    <Button color="secondary" label="Отменить" size="l" />
+    <Button label="Сохранить" size="l" />
 </ButtonGroup>
 ```
 
