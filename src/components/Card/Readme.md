@@ -1,10 +1,16 @@
 ```html
 <Card>
     <template slot="title">
-        Шаровой кран заклинило – делюсь способом, который помог перекрыть воду
+        Сохранить изменения?
     </template>
     <template slot="content">
-        Заклинивший водопроводный кран можно легко вернуть в рабочее состояние. Понадобятся плоскогубцы
+        Вы внесли изменения в данные, но не сохранили их
     </template>
+    <template slot="footer">
+        <ButtonGroup buttonsWidth="flex">
+            <Button color="secondary" label="Отменить" size="l" />
+            <Button label="Сохранить" size="l" />
+        </ButtonGroup>
+    </template>    
 </Card>
 ```

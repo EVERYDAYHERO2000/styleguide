@@ -22,7 +22,7 @@
 			 * Cчетчик
 			 */
 			counter: {
-				type: Number,
+				type: String,
 				default: 0
 			},
 			/**
