@@ -3,9 +3,7 @@ const needWater = function () {
     if (document.getElementById("needWater")) {
         const a = document.getElementById("glueWeightId").value;
         const b = document.getElementById("concentrationId").value;
-        const volumeOfLiquid = (+a*100)/ +b;
-        console.log(volumeOfLiquid)
-        let weightOfWater= volumeOfLiquid - +a;
+        let weightOfWater = ((+a*100)/ +b) - +a;
         weightOfWater=weightOfWater.toFixed(2);
         console.log(weightOfWater);
         document.getElementById(" ").innerText= `You need to take ${weightOfWater} grams of water`
@@ -27,6 +25,7 @@ const needWater = () => {
 //fourth opportunity  
 /* а как здесь? это вот вообще не понятно. Есть два аргумента, но с ними, получается, нельзя больше,
 чем одну математическую операцию проводить? */
+
 const needWater = new Function ('a','b'), {
     return  (+a*100) / +b - +a ;
 };
@@ -64,6 +63,8 @@ const VARMENT= {
     black: ['peach black', 'blue black']
     }
     
+    COLORS.violet
+
 //Краски, другая организация, согласно химическому составу
     
     const COLORS = {
@@ -71,3 +72,15 @@ const VARMENT= {
     sulfur: [ 'cadmium yellow', 'gipsum', 'oripigment', 'realgar'],
     carbonate: ['azurite', 'malachite', 'chalk']
      }
+
+const c = COLORS.lead;
+const d = COLORS.sulfur;
+
+function Mixcolors() {
+    if (c + d) {
+    console.log ('Blackening');
+    } else {
+    return ('You can use it!');
+} };
+
+Mixcolors();
