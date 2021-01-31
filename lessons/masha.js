@@ -52,7 +52,7 @@ const VARMENT= {
     };
     
 //краски по цветам
-    const COLORS = {
+const COLORS = {
     white: [ 'lead white', 'zinc white', 'titan white', 'lithopone', 'chalk'],
     yellow: ['cadmium yellow', 'yellow citrone', 'lead tin yellow'],
     ochre: [ 'light ochre', 'dark ochre'],
@@ -67,14 +67,20 @@ const VARMENT= {
 
 //Краски, другая организация, согласно химическому составу
     
-    const COLORS = {
-    lead: [ 'lead white', 'lead-tin-yellow', 'massicot'],
-    sulfur: [ 'cadmium yellow', 'gipsum', 'oripigment', 'realgar'],
-    carbonate: ['azurite', 'malachite', 'chalk']
+const COLORS = {
+    lead: [ 'lead white', 'lead-tin-yellow', 'massicot', 'minium'],
+    sulfur: ['cadmium yellow', 'gypsum', 'orpiment', 'realgar', 'cinnabar', 'vermilion', 
+            'ultramarine'],
+    carbonate: ['azurite', 'malachite', 'chalk'],
+    stable: [ 'ocher', 'sienna' ]
      }
 
 const c = COLORS.lead;
 const d = COLORS.sulfur;
+const e = COLORS.carbonate; //reaction with acids
+const f = 'alkali'; //reaction with dif. alkali -> degradation (Pigments are not good for Wall-paintings)
+const g = 'acid';  //reaction with dif. acids -> degradation (Not good to use with Oils?)
+const l = 'light'; // lightening under UV-Rays
 
 function Mixcolors() {
     if (c + d) {
