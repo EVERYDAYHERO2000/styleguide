@@ -1,15 +1,19 @@
 //first opportunity
 const needWater = function () {
+    let weightOfWater;
+
     if (document.getElementById("needWater")) {
         const a = document.getElementById("glueWeightId").value;
         const b = document.getElementById("concentrationId").value;
-        let weightOfWater = ((+a*100)/ +b) - +a;
+        weightOfWater = ((+a*100)/ +b) - +a;
         weightOfWater=weightOfWater.toFixed(2);
-        console.log(weightOfWater);
         document.getElementById(" ").innerText= `You need to take ${weightOfWater} grams of water`
     } else {
-        alert('Something goes wrong');
+        console.log(`Something goes wrong. weightOfWater = ${weightOfWater}`);
     }
+
+    return weightOfWater;
+
 };
 
 //second opportunity
@@ -26,9 +30,11 @@ const needWater = () => {
 /* а как здесь? это вот вообще не понятно. Есть два аргумента, но с ними, получается, нельзя больше,
 чем одну математическую операцию проводить? */
 
-const needWater = new Function ('a','b'), {
+const needWater = new Function (a,b) {
     return  (+a*100) / +b - +a ;
 };
+
+const needWater = new Function ('return  (+a*100) / +b - +a ;', a, b);
 
 needWater (document.getElementById("glueWeightId").value, document.getElementById("concentrationId").value);
 
@@ -67,6 +73,16 @@ const COLORS = {
 
 //Краски, другая организация, согласно химическому составу
     
+function Color(name, lead, sulfur, carbonate, stable) {
+    this.name = name;
+    this.lead = lead;
+    this.sulfur = sulfur;
+    this.carbonate = carbonate;
+    this.stable = stable;
+
+    return this;
+} 
+
 const COLORS = {
     lead: [ 'lead white', 'lead-tin-yellow', 'massicot', 'minium'],
     sulfur: ['cadmium yellow', 'gypsum', 'orpiment', 'realgar', 'cinnabar', 'vermilion', 
