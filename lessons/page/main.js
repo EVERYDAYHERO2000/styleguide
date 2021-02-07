@@ -27,13 +27,18 @@ const people = {
 const $app = document.querySelector('#app');
 let appHeight = 5000;
 let returnExist = false;
-let interval
+let interval;
+
+let lightCounter = 1000;
+let grayCounter = 1000;
+let newCounter = 1;
 
 render();
 window.scrollTo( 0, window.innerHeight/2 );
 
 window.addEventListener('scroll', function(e){
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && returnExist == true) {
+    if ( (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - window.innerHeight/2) 
+    && returnExist == true) {
         returnExist = false;
         render();
 
@@ -58,7 +63,7 @@ $startIndent.classList.add('indent');
 $startIndent.style.paddingTop = window.innerHeight + 'px';
 $app.append($startIndent);    
 
-for (let i=0; i < 1000; i++){
+for (let i=0; i < lightCounter; i++){
     let $img = document.createElement('img');
     let imgUrl = `assets/${people.light[randomInteger(0, 10)]}`;
 
@@ -81,7 +86,7 @@ let $indent = document.createElement('div');
 $indent.classList.add('indent');
 $app.append($indent);
 
-for (let i=0; i < 1000; i++){
+for (let i=0; i < grayCounter; i++) {
     let $img = document.createElement('img');
     let imgUrl = `assets/${people.gray[randomInteger(0, 4)]}`;
     let indent = (randomInteger(1, 10) == 3 || randomInteger(1, 10) == 10) ? true : false;
@@ -91,8 +96,43 @@ for (let i=0; i < 1000; i++){
     }
 
     $img.src = imgUrl;
-    $img.classList.add('gray');
+    $img.classList.add('gray');    
 
+    $app.append($img);
+}
+
+let $img = document.createElement('img');
+let imgUrl = `assets/${people.new[0]}`;
+
+$img.src = imgUrl;
+$img.classList.add('new');
+
+$app.append($img);
+
+let $middleIndent = document.createElement('div');
+$middleIndent.classList.add('indent');
+$middleIndent.style.height = '300px';
+$app.append($middleIndent);
+
+for (let i=0; i < newCounter; i++){
+    let $img = document.createElement('img');
+    let imgUrl = `assets/${people.light[randomInteger(0, 10)]}`;
+
+    if ( randomInteger(1, 10) == 3 || randomInteger(1, 10) == 10 ) {
+        $img.style.marginLeft = `${randomInteger(-10, 80)}px`;
+    }
+
+    if ( randomInteger(1, 10) > 2 && randomInteger(1, 10) < 5 ) {
+        let rnd = randomInteger(-60, -200);
+        let rnd2 = rnd * -1;
+        $img.style.marginTop = `${rnd}px`;
+        $img.style.marginBottom = `${rnd2}px`;
+
+    }  
+
+    $img.src = imgUrl;
+    $img.classList.add('light');
+    $img.classList.add('light2');
 
     $app.append($img);
 }
@@ -102,6 +142,9 @@ $stopIndent.classList.add('indent');
 $stopIndent.style.paddingTop = window.innerHeight + 'px';
 $app.append($stopIndent);  
 
+//lightCounter++
+grayCounter--
+newCounter++
 
 };
 
