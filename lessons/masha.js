@@ -187,7 +187,26 @@ const farben = [
     new Farbe ('Han Purpur', false, false, false, true, false, false),
     new Farbe ('Violett-braun Ocker'),
     new Farbe ('Fluorit', false, false, false, true, false, false),
-    new Farbe ('Schneckenpurpur', false, false, false, false, false, false)
+    new Farbe ('Schneckenpurpur', false, false, false, false, false, false),
+
+    new Farbe ('Umbra Natur', false, false, false, true, false, false),
+    new Farbe ('Sienna', false, false, false, true, false, false),
+    new Farbe ('Van Dyck Braun', false, false, false, false, false, false),
+    new Farbe ('Asphalt', false, true, true, false, true, false),
+    new Farbe ('Bitumen', false, true, true, false, true, false),
+    new Farbe ('Bister', false, false, false, true, false, false),
+    new Farbe ('Sepia', false, false, false, true, true, false),
+
+    new Farbe ('Knochen Schwarz', false, false, true, true, false, false),
+    new Farbe ('Rebenschwarz', false, false, false, true, false, false),
+    new Farbe ('Kohle', false, true, false, true, false, false),
+    new Farbe ('Graphit', false, false, false, true, false, false),
+    new Farbe ('Schwarze Kreide', false, false, false, true, false, false),
+    new Farbe ('Lampenschwarz', false, false, false, true, false, false),
+    new Farbe ('Eisenoxidschwarz', false, false, false, true, true, false),
+    new Farbe ('Marsschwarz', false, false, false, true, true, false),
+    new Farbe ('Anilinschwarz', false, false, false, true, true, true),
+    new Farbe ('Vantablack', false, false, false, true, true, false)
 
 ]
 
