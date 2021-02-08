@@ -121,6 +121,8 @@ function Farbe (name, blei, schwefel, karbonat, stabil, modern, giftig) {
     this.modern = modern;
     this.giftig = giftig;
     //organisch hinzufügen? Siehe ab Gelb
+    //Kupfer? -> +Schwefel = verschwärzung
+    //Lichtbeständig?
 
     return this;
 }
@@ -159,6 +161,79 @@ const farben = [
     new Farbe ('Kadmiumrot', false, false, false, false, true, false),
     new Farbe ('Chromrot', true, false, false, false, true, false),
     new Farbe ('Rotholz', false, false, false, false, false, false),
-    new Farbe ('Kermes', false, false, false, false, false, false)
+    new Farbe ('Kermes', false, false, false, false, false, false),
+    new Farbe ('Koschenille', false, false, false, true, false, false),
+    new Farbe ('Karminlack', false, false, false, true, false, false),
+    new Farbe ('Drachenblut', false, false, false, true, false, false),
+    new Farbe ('Gummilack', false, false, false, true, false, false),
+    new Farbe ('Krapplack', false, false, false, false, false, false),
+    new Farbe ('Alizarin', false, false, false, false, true, false),
+
+    new Farbe ('Malachit', false, false, true, false, false, true),
+    new Farbe ('Grünspan', false, false, false, false, false, false),
+    new Farbe ('Grüne Erde', false, false, false, true, false, false),
+    new Farbe ('Schweinfurter Grün', false, false, false, false, true, true),
+    new Farbe ('Chromgrün', true, false, false, false, true, true),
+    new Farbe ('Chromoxidgrün', false, false, false, true, true, false),
+
+    new Farbe ('Azurit', false, false, true, false, false, true),
+    new Farbe ('Naturliches Ultramarin', false, true, false, false, false, false),
+    new Farbe ('Smalte', false, false, false, false, false, false),
+    new Farbe ('Indigo', false, false, false, true, false, false),
+    new Farbe ('Synthetisches Ultramarin', false, true, false, true, false),
+    new Farbe ('Preusisch Blau', false, false, false, false, true, false),
+    new Farbe ('Ägyptisch Blau', false, false, false, true, false, false),
+
+    new Farbe ('Han Purpur', false, false, false, true, false, false),
+    new Farbe ('Violett-braun Ocker'),
+    new Farbe ('Fluorit', false, false, false, true, false, false),
+    new Farbe ('Schneckenpurpur', false, false, false, false, false, false)
 
 ]
+
+console.log(farben);
+
+// Konstruktor: Suche nach der Erstfassungsphase
+function Probe (name, stein, grundierungdunkel, grundierunghell, azurit, malachite, bleiweiß) {
+    this.name = name;
+    this.stein = stein;
+    this.grundierungdunkel = grundierungdunkel;
+    this.grundierunghell = grundierunghell;
+    //Zinnober?
+    this.azurit = azurit;
+    this.malachite = malachite;
+    this.bleiweiß = bleiweiß;
+
+    return this;
+}
+
+//Massiv
+const Proben = [
+   //Proben 2019
+    new Probe ('775/19', true, true, true, true, false, true),
+    new Probe ('776/19', true, true, true, true, false, true),
+    new Probe ('777/19', true, false, false, false, false, false),
+    new Probe ('778/19 A', false, false, false, false, false, false),
+    new Probe ('778/19 B', false, false, false, false, false, false),
+    new Probe ('779/19', false, true, false, false, true, true),
+    new Probe ('780/19', false, true, false, true, true, true),
+    new Probe ('781/19', false, false, false, false, false, false),
+    new Probe ('782/19', false, true, false, false, false, false),
+    new Probe ('783/19', false, false, false, false, false, false),
+    new Probe ('784/19', true, true, true, false, false, true),
+    new Probe ('785/19', false, true, false, true, false, false),
+    new Probe ('786/19', false, true, false, false, false, false),
+    new Probe ('787/19', true, false, false, false, false, false),
+    new Probe ('788/19', true, true, true, true, false, true),
+    new Probe ('789/19', false, false, false, false, false, false),
+    new Probe ('800/19', true, true, true, true, false, true),
+    new Probe ('801/19', true, true, false, false, false, false),
+    new Probe ('802/19', false, true, false, false, false, true)
+]    
+
+for (let i = 0; i < Proben.length; i++) {
+    if (Proben[i].malachite == true) {
+        console.log(Proben[i].name);
+    }
+};
+
