@@ -20,7 +20,11 @@ const people = {
         'omo5.png'
     ],
     new : [
-        'pers.png'
+        'pers1.png',
+        'pers2.png',
+        'pers3.png',
+        'pers4.png',
+        'pers5.png'
     ]
 }
 
@@ -116,7 +120,7 @@ $app.append($middleIndent);
 
 for (let i=0; i < newCounter; i++){
     let $img = document.createElement('img');
-    let imgUrl = `assets/${people.light[randomInteger(0, 10)]}`;
+    let imgUrl = `assets/${people.new[randomInteger(0, 4)]}`;
 
     if ( randomInteger(1, 10) == 3 || randomInteger(1, 10) == 10 ) {
         $img.style.marginLeft = `${randomInteger(-10, 80)}px`;
