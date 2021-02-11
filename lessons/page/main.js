@@ -48,10 +48,10 @@ window.addEventListener('scroll', function(e){
 
         //$app.style.height = '10000px';
 
-        clearInterval(interval);
-        interval = setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 100);
+        //clearInterval(interval);
+        //interval = setTimeout(() => {
+            //window.scrollTo(0, 0);
+        //}, 100);
         
     } else {
         returnExist = true;
@@ -60,12 +60,12 @@ window.addEventListener('scroll', function(e){
 
 function render() {
 
-$app.innerHTML = '';    
+//$app.innerHTML = '';    
 
 let $startIndent = document.createElement('div');
 $startIndent.classList.add('indent');
 $startIndent.style.paddingTop = window.innerHeight + 'px';
-$app.append($startIndent);    
+//$app.append($startIndent);    
 
 for (let i=0; i < lightCounter; i++){
     let $img = document.createElement('img');
@@ -143,7 +143,7 @@ for (let i=0; i < newCounter; i++){
 
 let $stopIndent = document.createElement('div');
 $stopIndent.classList.add('indent');
-$stopIndent.style.paddingTop = window.innerHeight + 'px';
+$stopIndent.style.paddingTop = '50px';//window.innerHeight + 'px';
 $app.append($stopIndent);  
 
 //lightCounter++
