@@ -41,7 +41,7 @@ render();
 window.scrollTo( 0, window.innerHeight/2 );
 
 window.addEventListener('scroll', function(e){
-    if ( (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - window.innerHeight/2) 
+    if ( (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - window.innerHeight) 
     && returnExist == true) {
         returnExist = false;
         render();
