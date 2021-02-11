@@ -112,7 +112,8 @@ Mixcolors();
 
 // DE Variante
 // Конструктор
-function Farbe (name, blei, schwefel, karbonat, stabil, modern, giftig) {
+function Farbe (name, type, blei, schwefel, karbonat, stabil, modern, giftig) {
+    this.type = type;
     this.name = name;
     this.blei = blei;
     this.schwefel = schwefel;
@@ -127,86 +128,101 @@ function Farbe (name, blei, schwefel, karbonat, stabil, modern, giftig) {
     return this;
 }
 
+let currentLang = 'de'
+
+const words = {
+    chalk : {
+        ru: 'Мел',
+        de: 'Kreide',
+        eng: 'Chalk'
+    },
+    gypsum : {
+        ru: 'Гипс',
+        de: 'Gips',
+        eng: 'Gypsum'
+    }
+}
+
 // Массив
 const farben = [
-    new Farbe ('Kreide', false, false, true, true, false, false),
-    new Farbe ('Gips', false, true, false, false, false, false),
-    new Farbe ('Bleiweiß', true, false, true, false, false, true),
-    new Farbe ('Lithopone', false, true, false, false, true, false),
-    new Farbe ('Zinkweiß', false, false, false, true, true, false),
-    new Farbe ('Chinesischweiß', false, false, false, true, true, false),
-    new Farbe ('Titanweiß', false, false, false, true, true, false),
+    new Farbe (words.chalk[currentLang] , 'white', false, false, true, true, false, false),
+    new Farbe (words.gypsum[currentLang], 'white', false, true, false, false, false, false),
+    new Farbe ('Bleiweiß', 'white', true, false, true, false, false, true),
+    new Farbe ('Lithopone', 'white', false, true, false, false, true, false),
+    new Farbe ('Zinkweiß', 'white', false, false, false, true, true, false),
+    new Farbe ('Chinesischweiß', 'white', false, false, false, true, true, false),
+    new Farbe ('Titanweiß', 'white', false, false, false, true, true, false),
 
-    new Farbe ('Auripigment', false, true, false, false, false, true),
-    new Farbe ('Massicot', true, false, false, false, false, true),
-    new Farbe ('Bleizinngelb', true, false, false, false, false, true),
-    new Farbe ('Gelber Ocker', false, false, false, true, false, false),
-    new Farbe ('Sienna', false, false,false, true, false, false),
-    new Farbe ('Marsgelb', false, false, false, true, true, false),
-    new Farbe ('Kadmiumgelb', false, true, false, false, true, false),
-    new Farbe ('Chromgelb', true, true, false, false, true, true),
-    new Farbe ('Zinkgelb', false, false, false, false, true, false),
-    new Farbe ('Strontiumgelb', false, false, false, false, true, false),
-    new Farbe ('Quercitron', false, false, false, false, true, false),
-    new Farbe ('Gelbkraut', false, false, false, false, false, false),
-    new Farbe ('Gelbbeeren', false, false, false, false, false, false),
-    new Farbe ('Echter Saffran', false, false, false, false, false, false),
-    new Farbe ('Gummigut', false, false, false, false, true, false),
+    new Farbe ('Auripigment', 'yellow', false, true, false, false, false, true),
+    new Farbe ('Massicot', 'yellow', true, false, false, false, false, true),
+    new Farbe ('Bleizinngelb', 'yellow', true, false, false, false, false, true),
+    new Farbe ('Gelber Ocker', 'yellow', false, false, false, true, false, false),
+    new Farbe ('Sienna', 'yellow', false, false,false, true, false, false),
+    new Farbe ('Marsgelb', 'yellow', false, false, false, true, true, false),
+    new Farbe ('Kadmiumgelb', 'yellow', false, true, false, false, true, false),
+    new Farbe ('Chromgelb', 'yellow', true, true, false, false, true, true),
+    new Farbe ('Zinkgelb', 'yellow', false, false, false, false, true, false),
+    new Farbe ('Strontiumgelb', 'yellow', false, false, false, false, true, false),
+    new Farbe ('Quercitron', 'yellow', false, false, false, false, true, false),
+    new Farbe ('Gelbkraut', 'yellow', false, false, false, false, false, false),
+    new Farbe ('Gelbbeeren', 'yellow', false, false, false, false, false, false),
+    new Farbe ('Echter Saffran', 'yellow', false, false, false, false, false, false),
+    new Farbe ('Gummigut', 'yellow', false, false, false, false, true, false),
 
-    new Farbe ('Zinnober', false, true, false, false, false, true),
-    new Farbe ('Mennige', true, false, false, false, false, true),
-    new Farbe ('Roter Ocker', false, false, false, true, false, false),
-    new Farbe ('Caput Mortuum',  false, false, false, true, false,  false),
-    new Farbe ('Realgar', false, true, false, false, false, true),
-    new Farbe ('Kadmiumrot', false, false, false, false, true, false),
-    new Farbe ('Chromrot', true, false, false, false, true, false),
-    new Farbe ('Rotholz', false, false, false, false, false, false),
-    new Farbe ('Kermes', false, false, false, false, false, false),
-    new Farbe ('Koschenille', false, false, false, true, false, false),
-    new Farbe ('Karminlack', false, false, false, true, false, false),
-    new Farbe ('Drachenblut', false, false, false, true, false, false),
-    new Farbe ('Gummilack', false, false, false, true, false, false),
-    new Farbe ('Krapplack', false, false, false, false, false, false),
-    new Farbe ('Alizarin', false, false, false, false, true, false),
+    new Farbe ('Zinnober', 'red', false, true, false, false, false, true),
+    new Farbe ('Mennige', 'red', true, false, false, false, false, true),
+    new Farbe ('Roter Ocker', 'red', false, false, false, true, false, false),
+    new Farbe ('Caput Mortuum', 'red', false, false, false, true, false,  false),
+    new Farbe ('Realgar', 'red', false, true, false, false, false, true),
+    new Farbe ('Kadmiumrot', 'red', false, false, false, false, true, false),
+    new Farbe ('Chromrot', 'red', true, false, false, false, true, false),
+    new Farbe ('Rotholz', 'red', false, false, false, false, false, false),
+    new Farbe ('Kermes', 'red', false, false, false, false, false, false),
+    new Farbe ('Koschenille', 'red', false, false, false, true, false, false),
+    new Farbe ('Karminlack', 'red', false, false, false, true, false, false),
+    new Farbe ('Drachenblut', 'red', false, false, false, true, false, false),
+    new Farbe ('Gummilack', 'red', false, false, false, true, false, false),
+    new Farbe ('Krapplack', 'red', false, false, false, false, false, false),
+    new Farbe ('Alizarin', 'red', false, false, false, false, true, false),
 
-    new Farbe ('Malachit', false, false, true, false, false, true),
-    new Farbe ('Grünspan', false, false, false, false, false, false),
-    new Farbe ('Grüne Erde', false, false, false, true, false, false),
-    new Farbe ('Schweinfurter Grün', false, false, false, false, true, true),
-    new Farbe ('Chromgrün', true, false, false, false, true, true),
-    new Farbe ('Chromoxidgrün', false, false, false, true, true, false),
+    new Farbe ('Malachit', 'green', false, false, true, false, false, true),
+    new Farbe ('Grünspan', 'green', false, false, false, false, false, false),
+    new Farbe ('Grüne Erde', 'green', false, false, false, true, false, false),
+    new Farbe ('Schweinfurter Grün', 'green', false, false, false, false, true, true),
+    new Farbe ('Chromgrün', 'green', true, false, false, false, true, true),
+    new Farbe ('Chromoxidgrün', 'green', false, false, false, true, true, false),
 
-    new Farbe ('Azurit', false, false, true, false, false, true),
-    new Farbe ('Naturliches Ultramarin', false, true, false, false, false, false),
-    new Farbe ('Smalte', false, false, false, false, false, false),
-    new Farbe ('Indigo', false, false, false, true, false, false),
-    new Farbe ('Synthetisches Ultramarin', false, true, false, true, false),
-    new Farbe ('Preusisch Blau', false, false, false, false, true, false),
-    new Farbe ('Ägyptisch Blau', false, false, false, true, false, false),
+    new Farbe ('Azurit', 'blue', false, false, true, false, false, true),
+    new Farbe ('Naturliches Ultramarin', 'blue', false, true, false, false, false, false),
+    new Farbe ('Smalte', 'blue', false, false, false, false, false, false),
+    new Farbe ('Indigo', 'blue', false, false, false, true, false, false),
+    new Farbe ('Synthetisches Ultramarin', 'blue', false, true, false, true, false),
+    new Farbe ('Preusisch Blau', 'blue', false, false, false, false, true, false),
+    new Farbe ('Ägyptisch Blau', 'blue', false, false, false, true, false, false),
 
-    new Farbe ('Han Purpur', false, false, false, true, false, false),
-    new Farbe ('Violett-braun Ocker'),
-    new Farbe ('Fluorit', false, false, false, true, false, false),
-    new Farbe ('Schneckenpurpur', false, false, false, false, false, false),
+    new Farbe ('Han Purpur', 'violet', false, false, false, true, false, false),
+    new Farbe ('Violett-braun Ocker', 'violet'),
+    new Farbe ('Fluorit', 'violet', false, false, false, true, false, false),
+    new Farbe ('Schneckenpurpur', 'violet', false, false, false, false, false, false),
 
-    new Farbe ('Umbra Natur', false, false, false, true, false, false),
-    new Farbe ('Sienna', false, false, false, true, false, false),
-    new Farbe ('Van Dyck Braun', false, false, false, false, false, false),
-    new Farbe ('Asphalt', false, true, true, false, true, false),
-    new Farbe ('Bitumen', false, true, true, false, true, false),
-    new Farbe ('Bister', false, false, false, true, false, false),
-    new Farbe ('Sepia', false, false, false, true, true, false),
+    new Farbe ('Umbra Natur', 'brown', false, false, false, true, false, false),
+    new Farbe ('Sienna', 'brown', false, false, false, true, false, false),
+    new Farbe ('Van Dyck Braun', 'brown', false, false, false, false, false, false),
+    new Farbe ('Asphalt', 'brown', false, true, true, false, true, false),
+    new Farbe ('Bitumen', 'brown', false, true, true, false, true, false),
+    new Farbe ('Bister', 'brown', false, false, false, true, false, false),
+    new Farbe ('Sepia', 'brown', false, false, false, true, true, false),
 
-    new Farbe ('Knochen Schwarz', false, false, true, true, false, false),
-    new Farbe ('Rebenschwarz', false, false, false, true, false, false),
-    new Farbe ('Kohle', false, true, false, true, false, false),
-    new Farbe ('Graphit', false, false, false, true, false, false),
-    new Farbe ('Schwarze Kreide', false, false, false, true, false, false),
-    new Farbe ('Lampenschwarz', false, false, false, true, false, false),
-    new Farbe ('Eisenoxidschwarz', false, false, false, true, true, false),
-    new Farbe ('Marsschwarz', false, false, false, true, true, false),
-    new Farbe ('Anilinschwarz', false, false, false, true, true, true),
-    new Farbe ('Vantablack', false, false, false, true, true, false)
+    new Farbe ('Knochen Schwarz', 'black', false, false, true, true, false, false),
+    new Farbe ('Rebenschwarz', 'black', false, false, false, true, false, false),
+    new Farbe ('Kohle', 'black', false, true, false, true, false, false),
+    new Farbe ('Graphit', 'black', false, false, false, true, false, false),
+    new Farbe ('Schwarze Kreide', 'black', false, false, false, true, false, false),
+    new Farbe ('Lampenschwarz', 'black', false, false, false, true, false, false),
+    new Farbe ('Eisenoxidschwarz', 'black', false, false, false, true, true, false),
+    new Farbe ('Marsschwarz', 'black', false, false, false, true, true, false),
+    new Farbe ('Anilinschwarz', 'black', false, false, false, true, true, true),
+    new Farbe ('Vantablack', 'black', false, false, false, true, true, false)
 
 ]
 
