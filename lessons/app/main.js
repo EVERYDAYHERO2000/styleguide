@@ -8,6 +8,8 @@ const $appDescription = document.createElement('p');
 const $button = document.createElement('button');
 const $weightGlue = createInput('in gram', 'number');
 const $weightWater = createInput('in gram', 'number');
+const $result = document.createElement('div');
+
 
 $appDescription.innerText = `Hier you can calculate the concentration 
 of your liquid (aqueous media like animal glue or synthetic adhesives):`;
@@ -19,19 +21,46 @@ $button.addEventListener('click', function(event){
 
     let glue = $weightGlue.value || 0;
     let water = $weightWater.value || 0;
-    let calc = (glue / water) * Math.PI / water;
+    let calc = (glue/ (glue + water) * 100);
+    calc = calc.value || 0;
 
-    $result.innerText = calc;
+
+    //$result.innerText = calc;
 
     console.log('Glue: ', glue);
     console.log('Water: ', water);
     console.log('Calc: ', Number.isNaN(calc) ? 0 : calc );
+    $result.innerText = `Your concentration is ${calc} %`
 });
+
+$result.classList.add('result');
+
 
 $body.append($appDescription);
 $body.append(createField( 'Glue (dry)', $weightGlue ));
 $body.append(createField( 'Water', $weightWater ));
 $body.append($button);
+$body.append($result);
+
+
+
+const tarnslation = {
+    glue : {
+        ru: 'Клей',
+        de: 'Leim',
+        eng: 'Glue'
+    },
+    water : {
+        ru: 'Вода',
+        de: 'Wasser',
+        eng: 'Water'
+    },
+    button: {
+        ru: 'Тык',
+        de: 'Los!' ,
+        eng: 'Get It!'
+    }
+}
 
 
 
@@ -58,6 +87,7 @@ function createField(name, $domElement){
     $field.classList.add('form-field');
     return $field;
 }
+
 
 /*
 function createField(name){
