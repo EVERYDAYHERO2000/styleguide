@@ -109,7 +109,7 @@ function Mixcolors() {
 Mixcolors();
 
 */
-
+/*
 // DE Variante
 // Конструктор
 function Farbe (name, type, blei, schwefel, karbonat, stabil, modern, giftig) {
@@ -271,4 +271,122 @@ for (let i = 0; i < Proben.length; i++) {
         console.log(Proben[i].name);
     }
 };
+*/
 
+//Objects
+const Probes = {
+    _name: '775/19',
+    _quantityLayers: 5,
+    originalLayers: true,
+    info(){
+        return `The Probe ${this._name} has ${this._quantityLayers} layers. Original layers? ${this.originalLayers}`
+    },
+
+    get Original() {
+        if (this.originalLayers === true) {
+            return `The Probe ${this._name} has original paint layers.`
+        } else {
+            return `The Probe ${this._name} has NO original paint layers.`;
+        }
+    },
+
+    set quantityLayers (quantity) {
+        if (newName === 'string'){
+            this._quantityLayers = quantity;
+        } else {
+        console.log('You should give the name for your probe.');
+        }
+    }
+};
+
+Probes.info();
+console.log(Probes.info());
+console.log(Probes.Original);
+
+Probes.quantity = 15;
+console.log(Probes.quantity);
+
+
+//factory function -> returns object (with nested properties)
+
+function Examples(num, base, layer) {
+    return {
+        num,
+        base,
+        layer,
+        phase: {
+            first: ['old colors', 'very old colors'],
+            second: ['second colors'] ,
+            third: ['next colors']
+            },
+        about() {
+            console.log(`The probe ${this.num} has ${this.layer} layers`)
+        }
+    }
+}
+
+
+
+
+console.log(Object.keys(Examples));
+
+let newExample = Examples('800/19', 'stone', 10);
+console.log(newExample.num);
+console.log(newExample.base);
+newExample.about();
+
+
+const exampleKeys = Object.keys(Examples);
+console.log(exampleKeys);
+
+const exampleEntries = Object.entries(Examples);
+console.log(exampleEntries);
+
+const exampleNew = Object.assign({varnish: false, retouching: true}, Examples);
+console.log(exampleNew);
+
+//destructed assignment {}
+
+const { phaseOnExmpl } = Examples;
+console.log(phaseOnExmpl);
+
+
+
+/*
+
+(function(){
+
+    const $body = document.querySelector('body');
+    $body.classList.add('app');
+    
+    //вывести текст саблайна
+    const $appDescription = document.createElement('p');
+    const $button = document.createElement('button');
+    const $weightGlue = createInput('in gram', 'number');
+    const $weightWater = createInput('in gram', 'number');
+
+    
+    $appDescription.innerText = `Hier you can calculate the concentration 
+    of your liquid (aqueous media like animal glue or synthetic adhesives):`;
+    $appDescription.classList.add('app-description');
+    
+    $button.classList.add('button');
+    $button.innerText = 'Get It!';
+    $button.addEventListener('click', function(event){
+    
+        let glue = $weightGlue.value || 0;
+        let water = $weightWater.value || 0;
+        let calc = (glue / water) * Math.PI / water;
+    
+        $result.innerText = calc;
+    
+        console.log('Glue: ', glue);
+        console.log('Water: ', water);
+        console.log('Calc: ', Number.isNaN(calc) ? 0 : calc );
+    });
+    
+    $body.append($appDescription);
+    $body.append(createField( 'Glue (dry)', $weightGlue ));
+    $body.append(createField( 'Water', $weightWater ));
+    $body.append($button); 
+    */
