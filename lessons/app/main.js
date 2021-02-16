@@ -8,10 +8,10 @@ const $appDescription = document.createElement('p');
 const $button = document.createElement('button');
 const $weightGlue = createInput('in gram', 'number');
 const $weightWater = createInput('in gram', 'number');
-const $result = document.createElement('div');
+const $result = document.createElement('p');
 
 
-$appDescription.innerText = `Hier you can calculate the concentration 
+$appDescription.innerText = `Here you can calculate the concentration 
 of your liquid (aqueous media like animal glue or synthetic adhesives):`;
 $appDescription.classList.add('app-description');
 
@@ -19,20 +19,17 @@ $button.classList.add('button');
 $button.innerText = 'Get It!';
 $button.addEventListener('click', function(event){
 
-    let glue = $weightGlue.value || 0;
-    let water = $weightWater.value || 0;
-    let calc = (glue/ (glue + water) * 100);
-    calc = calc.value || 0;
+    let glue = +$weightGlue.value || 0;
+    let water = +$weightWater.value || 0;
+    let calc = (glue/ (glue + water) ) * 100;
+    calc = calc.toFixed(2);
 
-
-    //$result.innerText = calc;
 
     console.log('Glue: ', glue);
     console.log('Water: ', water);
     console.log('Calc: ', Number.isNaN(calc) ? 0 : calc );
     $result.innerText = `Your concentration is ${calc} %`
 });
-
 $result.classList.add('result');
 
 
@@ -41,29 +38,6 @@ $body.append(createField( 'Glue (dry)', $weightGlue ));
 $body.append(createField( 'Water', $weightWater ));
 $body.append($button);
 $body.append($result);
-
-
-
-const tarnslation = {
-    glue : {
-        ru: 'Клей',
-        de: 'Leim',
-        eng: 'Glue'
-    },
-    water : {
-        ru: 'Вода',
-        de: 'Wasser',
-        eng: 'Water'
-    },
-    button: {
-        ru: 'Тык',
-        de: 'Los!' ,
-        eng: 'Get It!'
-    }
-}
-
-
-
 
 
 
@@ -97,4 +71,30 @@ function createField(name){
     return $field;
 }
 */
+
+const tarnslation = {
+    glue : {
+        ru: 'Клей',
+        de: 'Leim',
+        eng: 'Glue'
+    },
+    water : {
+        ru: 'Вода',
+        de: 'Wasser',
+        eng: 'Water'
+    },
+    button: {
+        ru: 'Пиу!',
+        de: 'Los!' ,
+        eng: 'Get It!'
+    },
+    description: {
+        ru: 'Здесь можно рассчитать концентрацию клеевого расствора на водной основе:',
+        de: 'Hier können Sie die Konzentration Ihres Leimes ausrechnen:',
+        eng: `Here you can calculate the concentration 
+        of your liquid (aqueous media like animal glue or synthetic adhesives):`
+    }
+}
+
+
 })();
