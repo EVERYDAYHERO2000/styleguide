@@ -21,14 +21,9 @@ $button.addEventListener('click', function(event){
 
     let glue = +$weightGlue.value || 0;
     let water = +$weightWater.value || 0;
-    let calc = (glue/ (glue + water) ) * 100;
+    let calc = (water == 0 && glue == 0) ? 0 : (glue/ (glue + water) ) * 100;
     calc = calc.toFixed(2);
-
-
-    console.log('Glue: ', glue);
-    console.log('Water: ', water);
-    console.log('Calc: ', Number.isNaN(calc) ? 0 : calc );
-    $result.innerText = `Your concentration is ${calc} %`
+    $result.innerHTML = `<span>Your concentration is ${calc} %</span>`;
 });
 $result.classList.add('result');
 
