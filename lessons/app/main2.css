@@ -2,21 +2,25 @@
     background-color: rgb(235, 227, 211);
     font-size: 18px;
     font-family: sans-serif;
+    color: rgb(7, 7, 102);
 }
 
 .app-description {
     font-size: 20px;
     line-height: 1.45;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .form-field {
     margin: 20px 0;
     display: flex;
+    justify-content: space-between;
 }
 
 .form-field__description {
     padding: 10px;
-    width: 100px;
+    width: 150px;
 }
 
 .input {
@@ -25,7 +29,7 @@
     border-radius: 8px;
     border: solid 1px rgba(68, 59, 48, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
-    width: calc(100% - 100px);
+    width: calc(100% - 150px);
 }
 
 .input:focus {
@@ -38,7 +42,7 @@
     padding: 10px;
     width: 100%;
     border-radius: 8px;
-    background-color: rgb(146, 57, 45);
+    background-color: rgb(180, 58, 42);
     border: none;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0);
     transition: 0.2s all ease;
@@ -49,7 +53,7 @@
 }
 
 .button:hover {
-    background-color: rgb(155, 64, 52);
+    background-color: rgb(209, 78, 61);
     box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.4);
     transition: 0.5s all ease;
 }
@@ -62,7 +66,7 @@
 
 .result span {
     opacity: 0;
-    animation: result-animate 0.5s 1s normal forwards;
+    animation: result-animate 0.2s 0.7s normal forwards;
 }
 
 @keyframes result-animate {
