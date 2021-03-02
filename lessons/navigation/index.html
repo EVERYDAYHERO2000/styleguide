@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="sidebar.css" />
     </head>
     <body>
         <div class="sidebar">
@@ -25,8 +25,7 @@
                                 <div class="dropdown__background"></div>
                                 <div class="dropdown__items">
                                     <div class="dropdown__item">Мои организации</div>
-                                    <div class="dropdown__item">Роли</div>
-                                    <div class="dropdown__item">Настройки</div>
+                                    <div class="dropdown__item">Настройки кабинета</div>
                                     <div class="dropdown__item">Помощь</div>
                                 </div>
                             </div>  
@@ -36,30 +35,33 @@
                         <div class="select-adress__input">
                             <div class="select-adress__input-header">
                                 <div class="icon icon_adress"></div>
-                                <div class="nav-text">Москва, Полтавская ул., 16</div>
+                                <div class="nav-text nav-text_selected">Москва, Полтавская ул., 16</div>
                             </div>    
                             <div class="select-adress__drop icon icon_drop"></div>
                         </div>
+                        <div class="select-adress__background"><div></div></div>
                         <div class="select-adress__dropdown">
                             <div class="select-adress__dropdown-inner">
 
                             <input class="address-search" placeholder="Найти филиал" type="text" />
                                
-                            <div class="select-adress__input-header select-adress__input-header_selected">
+                            <div class="select-adress__input-header select-adress__input-header_inside select-adress__input-header_selected">
                                 <div class="icon icon_adress"></div>
                                 <div class="nav-text">Москва, Полтавская ул., 16</div>
                             </div>
 
-                            <div class="select-adress__input-header">
+                            <div class="select-adress__input-header select-adress__input-header_inside">
                                 <div class="icon icon_adress"></div>
                                 <div class="nav-text">Москва, Тверская ул., 48</div>
                             </div>
 
-                            <div class="select-adress__input-header">
+                            <div class="select-adress__input-header select-adress__input-header_inside">
                                 <div class="icon icon_adress"></div>
                                 <div class="nav-text">Санкт-петербург, Гангутская ул., 8</div>
                             </div>
 
+                            <div class="sidebar-button sidebar-button_address">Управлять адресами</div>
+                            
                             </div>
                         </div>
                     </div>
@@ -75,8 +77,10 @@
                             <div class="subnavigation__item">Контактная информация</div>
                             <div class="subnavigation__item">Особенности</div>
                             <div class="subnavigation__item">Фотографии</div>
+                            <div class="subnavigation__item">Отзывы</div>
                             <div class="subnavigation__item">Публикации</div>
                             <div class="subnavigation__item">Сотрудники</div>
+                            <div class="subnavigation__item">Акции</div>
                             <div class="subnavigation__item">Формы</div>
                             <div class="subnavigation__item">Сайт</div>
                         </div>
@@ -102,7 +106,6 @@
                         <div class="navigation__body">
                             <div class="subnavigation__item">Клиенты</div>
                             <div class="subnavigation__item">Аудитория</div>
-                            <div class="subnavigation__item">Отзывы</div>
                         </div>
                     </div>
 
@@ -110,10 +113,13 @@
                         <div class="navigation__header">
                             <div class="icon icon_adv"></div>
                             <div class="nav-text">Реклама</div>
+                            <div class="nav-counter">1</div>
                         </div>
                         <div class="navigation__body">
-                            <div class="subnavigation__item">Рекламные кампании</div>
-                            <div class="subnavigation__item">Статистика</div>
+                            <div class="subnavigation__item"><span>На картах №234568</span></div>
+                            <div class="subnavigation__item"><span>На картах №234567</span></div>
+                            <div class="subnavigation__item"><span>Для сайта №234566</span><div class="nav-counter nav-counter_inside">1</div></div>
+                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Новая кампания</div></div>
                         </div>
                     </div>
 
@@ -123,8 +129,8 @@
                             <div class="nav-text">Маркетинг</div>
                         </div>
                         <div class="navigation__body">
-                            <div class="subnavigation__item">Маркетинговые кампании</div>
-                            <div class="subnavigation__item">Статистика</div>
+                            <div class="subnavigation__item">Вернуть потерянных №234565</div>
+                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Новая кампания</div></div>
                         </div>
                     </div>
 
@@ -136,7 +142,6 @@
                         <div class="navigation__body">
                             <div class="subnavigation__item">Товары</div>
                             <div class="subnavigation__item">Услуги</div>
-                            <div class="subnavigation__item">Акции</div>
                         </div>
                     </div>
 
@@ -149,6 +154,17 @@
                             <div class="subnavigation__item">Статистика</div>
                             <div class="subnavigation__item">Воронки</div>
                             <div class="subnavigation__item">Звонки</div>
+                        </div>
+                    </div>
+
+                    <div class="navigation__item navigation__item_hide">
+                        <div class="navigation__header">
+                            <div class="icon icon_settings"></div>
+                            <div class="nav-text">Настройки</div>
+                        </div>
+                        <div class="navigation__body">
+                            <div class="subnavigation__item">Роли</div>
+                            <div class="subnavigation__item">Оповещения</div>
                         </div>
                     </div>
 

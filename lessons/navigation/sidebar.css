@@ -114,6 +114,29 @@ body {
     transform: translateY(-10px);
 }
 
+.select-adress__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.select-adress__background > div {
+    width: 100%;
+    margin-top: 230px;
+    height: calc(100vh - 230px);
+    background: linear-gradient(0deg, rgba(0,0,0,0.2007177871148459) 78%, rgba(0,0,0,0) 100%);
+}
+
+.select-adress_hide .select-adress__background {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .select-adress_open .select-adress__input {
     background-color: rgba(255,255,255,0.05);
     border-radius: 8px 8px 0 0;
@@ -353,6 +376,10 @@ body {
     background-image: url(./assets/tag.svg);
 }
 
+.icon_settings {
+    background-image: url(./assets/settings.svg);
+}
+
 .icon_dots {
     background-image: url(./assets/dots.svg);
     background-size: 100%;
@@ -418,4 +445,31 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 200;
+}
+
+.sidebar-button {
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.1);
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 0 -12px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar-button:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.sidebar-button_icon-add {
+    background-image: url(assets/add.svg);
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    padding-left: 32px;
+}
+
+.sidebar-button_address {
+    display: block;
+    margin: 8px 8px -8px 8px;
+    text-align: center;
 }
