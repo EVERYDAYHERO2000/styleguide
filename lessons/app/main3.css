@@ -2,18 +2,17 @@
     background-color: rgb(235, 227, 211);
     font-size: 18px;
     font-family: sans-serif;
-    color: rgb(7, 7, 102);
 }
 
 .app-description {
     font-size: 20px;
     line-height: 1.45;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .form-field {
-    margin: 20px 5%;
+    margin: 20px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -38,11 +37,11 @@
 
 .button {
     font-size: 18px;
-    color: #fff;
+    color: rgb(238, 225, 208);
     padding: 10px;
     width: 100%;
     border-radius: 8px;
-    background-color: rgb(180, 58, 42);
+    background-color: rgb(146, 57, 45);
     border: none;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0);
     transition: 0.2s all ease;
@@ -53,7 +52,7 @@
 }
 
 .button:hover {
-    background-color: rgb(209, 78, 61);
+    background-color: rgb(155, 64, 52);
     box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.4);
     transition: 0.5s all ease;
 }
@@ -66,7 +65,7 @@
 
 .result span {
     opacity: 0;
-    animation: result-animate 0.2s 0.7s normal forwards;
+    animation: result-animate 0.1s 0.5s normal forwards;
 }
 
 @keyframes result-animate {
