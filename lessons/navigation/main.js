@@ -66,4 +66,8 @@ for (let $i of $dotsMenu) {
 
 }    
 
+document.querySelector('.company__logo').addEventListener('click',function(){
+    document.location.href="index.html"
+})
+
 })();

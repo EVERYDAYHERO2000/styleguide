@@ -477,3 +477,7 @@ body {
     margin: 8px 8px -8px 8px;
     text-align: center;
 }
+
+.navigation__item a {
+    color: inherit;
+}
