@@ -5,9 +5,14 @@
     position: relative;
 }
 
-.graph__header {
+.graph__header > span {
     font-size: 18px;
     font-weight: 600;
+}
+
+.graph__header > a {
+    font-size: 14px;
+    padding-left: 16px;
 }
 
 .graph__grid {
