@@ -18,7 +18,7 @@
 }
 
 .card__top {
-    min-height: 100px;
+    min-height: 240px;
 }
 
 .card__bottom {
@@ -95,4 +95,36 @@
 .item-list__check_adv {
     background-image: url(assets/step_adv.svg);
     color: rgba(0,0,0,0.6)
+}
+
+.ill {
+    width: 100%;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ill_1 {
+    background-image: url(assets/Frame1.svg);
+}
+
+.ill_2 {
+    background-image: url(assets/Frame2.svg);
+}
+
+.ill_3 {
+    background-image: url(assets/Frame3.svg);
+}
+
+.ill_4 {
+    background-image: url(assets/Frame4.svg);
+}
+
+.badge {
+    border-radius: 4px;
+    background-color: #51C15C;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
 }
