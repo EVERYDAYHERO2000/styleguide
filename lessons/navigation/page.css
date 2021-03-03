@@ -1,0 +1,123 @@
+.page {
+    width: calc(100vw - 280px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page__top {
+
+}
+
+.page__header {
+    width: 100%;
+    height: var(--height-header);
+    border-bottom: rgba(0,0,0,0.1) solid 1px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page__header-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.page__header-tool {
+    display: flex;
+    align-items: center;
+}
+
+.page__header-tool .icon_bell {
+    height: 24px;
+    width: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    margin-right: 16px;
+}
+
+.page__body {
+
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user__name {
+    padding-right: 12px;
+    font-size: 14px;
+}
+
+
+.user__name::first-letter {
+    color: red;
+}
+
+.user__avatar {
+    height: 48px;
+    width: 48px;
+    min-height: 48px;
+    min-width: 48px;
+    max-height: 48px;
+    max-width: 48px;
+    background-image: url(assets/user.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+.page__footer {
+    width: 100%;
+    height: var(--height-header);
+    border-top: rgba(0,0,0,0.1) solid 1px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px;
+    font-size: 14px;
+    justify-content:space-between;
+}
+
+.page__footer-left {
+    
+}
+
+.page__footer-left a+a {
+    padding-left: 16px;
+}
+
+.page__footer-right {
+
+}
+
+.button {
+    background-color: rgb(15, 15, 164);
+    color: #fff;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(28, 28, 179);
+}
+
+.button_rounded {
+    border-radius: 8px;
+}
+
+.button_chat {
+    padding-left: 42px;
+    background-image: url(assets/chat.svg);
+    background-position: 16px center;
+    background-repeat: no-repeat;
+}
+

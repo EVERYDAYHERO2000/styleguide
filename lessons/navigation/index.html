@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="app.css" />
         <link rel="stylesheet" href="sidebar.css" />
+        <link rel="stylesheet" href="page.css" />
+        <link rel="stylesheet" href="cards.css" />
     </head>
     <body>
+        <div class="app">
         <div class="sidebar">
             <div class="sidebar__header">
                 <div class="business-logo"></div>
@@ -25,6 +29,7 @@
                                 <div class="dropdown__background"></div>
                                 <div class="dropdown__items">
                                     <div class="dropdown__item">Мои организации</div>
+                                    <div class="dropdown__item">Мои рекламные кампании</div>
                                     <div class="dropdown__item">Настройки кабинета</div>
                                     <div class="dropdown__item">Помощь</div>
                                 </div>
@@ -172,6 +177,137 @@
 
                 </div>
             </div>
+        </div>
+        <div class="page">
+            <div class="page__top">
+                <div class="page__header">
+                    <div class="page__header-title">
+                        
+                    </div>
+                    <div class="page__header-tool">
+                        <div class="icon icon_bell"></div>
+                        <div class="user">
+                            <div class="user__name">username</div>
+                            <div class="user__avatar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page__body">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card__top">
+                                <div class="card__title">Об организации</div>
+                                <div class="card__description">
+                                    Заполните профиль, чтобы улучшить позицию компании 
+                                    в результатах поиска.
+                                </div>
+                            </div>
+                            <div class="card__bottom">
+                                <div class="item-list">
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_checked" href="#">Контактная информация</a>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_checked" href="#">Часы работы</a>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_unchecked" href="#">Описание и особенности</a>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <span class="item-list__check item-list__check_checked">Подтвердить права</span>
+                                    </div>
+                                </div>
+                            </div>        
+                        </div>
+                        <div class="card">
+                            <div class="card__top">
+                                <div class="card__title">Товары и услугии</div>
+                                <div class="card__description">
+                                    Расскажите о ваших услугах и товарах. 
+                                    Клиенты смогут оставлять заявки онлайн.
+                                </div>
+                            </div>
+                            <div class="card__bottom">
+                                <div class="item-list">
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Услуги</a>
+                                        <div class="item-list__counter">2</div>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Товары</a>
+                                        <div class="item-list__counter">10</div>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <span class="item-list__check item-list__check_unchecked">Настроить форму заказа</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__top">
+                                <div class="card__title">Реклама и продвижение</div>
+                                <div class="card__description">
+                                    Приведите новых клиентов и сделайте вашу организацию заметнее.
+                                </div>
+                            </div>
+                            <div class="card__bottom">
+                                <div class="item-list">
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_adv" href="#">Кампания на картах</a>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_checked" href="#">Добавить акцию</a>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <span class="item-list__check item-list__check_unchecked">Настроить форму заказа</span>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__check item-list__check_unchecked" href="#">Настроить лендинг</a>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="card">
+                            <div class="card__top">
+                                <div class="card__title">Заказы</div>
+                                <div class="card__description">
+                                    Следите за работой вашей организации.
+                                </div>
+                            </div>
+                            <div class="card__bottom">
+                                <div class="item-list">
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Заказов сегодня</a>
+                                        <div class="item-list__counter">2</div>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Неотвеченные отзывы</a>
+                                        <div class="item-list__counter item-list__counter_alert">1</div>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Пропущенные звонки</a>
+                                        <div class="item-list__counter item-list__counter_alert">1</div>
+                                    </div>
+                                    <div class="item-list__item">
+                                        <a class="item-list__title" href="#">Клиентов</a>
+                                        <div class="item-list__counter">24</div>
+                                    </div>    
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="page__footer">
+                <div class="page__footer-left">
+                    <a href="#">Справка</a>
+                    <a href="#">Обратная связь</a>
+                </div>
+                <div class="page__footer-right">
+                    <div class="button button_rounded button_chat">Онлайн-чат</div>
+                </div>
+            </div>
+        </div>
         </div>
         <script src="main.js"></script>
     </body>
