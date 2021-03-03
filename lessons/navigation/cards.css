@@ -127,4 +127,10 @@
     color: #fff;
     font-size: 12px;
     padding: 4px 8px;
+    white-space: nowrap;
+}
+
+.badge_warning {
+    background-color: rgb(255, 204, 0);
+    color: rgb(108, 70, 14);
 }

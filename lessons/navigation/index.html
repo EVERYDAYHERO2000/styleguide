@@ -1,409 +1,493 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="app.css" />
-        <link rel="stylesheet" href="sidebar.css" />
-        <link rel="stylesheet" href="page.css" />
-        <link rel="stylesheet" href="cards.css" />
-        <link rel="stylesheet" href="graph.css" />
-    </head>
-    <body>
-        <div class="app">
-        <div class="sidebar">
-            <div class="sidebar__header">
-                <div class="business-logo"></div>
-            </div>
-            <div class="sidebar__body">
-                <div class="company">
-                    <div class="company__plate">
-                        <div class="company__logo">
-
-                        </div>
-                        <div class="company__header">
-                            <div class="company__name">Hair Facker</div>
-                        </div>
-                        <div class="company__tools">
-                            <div class="icon-button icon-button_dots">
-                                <div class="icon icon_dots"></div>
-                            </div>  
-                            <div class="dropdown dropdown_hide">
-                                <div class="dropdown__background"></div>
-                                <div class="dropdown__items">
-                                    <div class="dropdown__item">Мои организации</div>
-                                    <div class="dropdown__item">Мои рекламные кампании</div>
-                                    <div class="dropdown__item">Настройки кабинета</div>
-                                    <div class="dropdown__item">Помощь</div>
-                                </div>
-                            </div>  
-                        </div>    
-                    </div>
-                    <div class="select-adress select-adress_hide">
-                        <div class="select-adress__input">
-                            <div class="select-adress__input-header">
-                                <div class="icon icon_adress"></div>
-                                <div class="nav-text nav-text_selected">Москва, Полтавская ул., 16</div>
-                            </div>    
-                            <div class="select-adress__drop icon icon_drop"></div>
-                        </div>
-                        <div class="select-adress__background"><div></div></div>
-                        <div class="select-adress__dropdown">
-                            <div class="select-adress__dropdown-inner">
-
-                            <input class="address-search" placeholder="Найти филиал" type="text" />
-                               
-                            <div class="select-adress__input-header select-adress__input-header_inside select-adress__input-header_selected">
-                                <div class="icon icon_adress"></div>
-                                <div class="nav-text">Москва, Полтавская ул., 16</div>
-                            </div>
-
-                            <div class="select-adress__input-header select-adress__input-header_inside">
-                                <div class="icon icon_adress"></div>
-                                <div class="nav-text">Москва, Тверская ул., 48</div>
-                            </div>
-
-                            <div class="select-adress__input-header select-adress__input-header_inside">
-                                <div class="icon icon_adress"></div>
-                                <div class="nav-text">Санкт-петербург, Гангутская ул., 8</div>
-                            </div>
-
-                            <div class="sidebar-button sidebar-button_address">Управлять адресами</div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="navigation">
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_home"></div>
-                            <div class="nav-text">Об организации</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Контактная информация</div>
-                            <div class="subnavigation__item">Особенности</div>
-                            <div class="subnavigation__item">Фотографии</div>
-                            <div class="subnavigation__item">Отзывы</div>
-                            <div class="subnavigation__item">Публикации</div>
-                            <div class="subnavigation__item">Сотрудники</div>
-                            <div class="subnavigation__item">Акции</div>
-                            <div class="subnavigation__item">Формы</div>
-                            <div class="subnavigation__item">Сайт</div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_orders"></div>
-                            <div class="nav-text">Заказы</div>
-                            <div class="nav-counter">2</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item"><span>Заявки</span><div class="nav-counter nav-counter_inside">2</div></div>
-                            <div class="subnavigation__item">Календарь</div>
-                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Создать заказ</div></div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_clients"></div>
-                            <div class="nav-text">Клиенты</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Аудитория</div>
-                            <div class="subnavigation__item">Клиенты</div>
-                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Добавить клиента</div></div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_adv"></div>
-                            <div class="nav-text">Реклама</div>
-                            <div class="nav-counter">1</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item"><span>На картах №234568</span></div>
-                            <div class="subnavigation__item"><span>На картах №234567</span></div>
-                            <div class="subnavigation__item"><span>Для сайта №234566</span><div class="nav-counter nav-counter_inside">1</div></div>
-                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Новая кампания</div></div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_marketing"></div>
-                            <div class="nav-text">Маркетинг</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Вернуть потерянных №234565</div>
-                            <div class="subnavigation__item"><div class="sidebar-button sidebar-button_icon-add">Новая кампания</div></div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_tag"></div>
-                            <div class="nav-text">Товары и услуги</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Товары</div>
-                            <div class="subnavigation__item">Услуги</div>
-                            <div class="subnavigation__item">Сотрудники</div>
-                            <div class="subnavigation__item">Акции</div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_stat"></div>
-                            <div class="nav-text">Статистика</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Статистика</div>
-                            <div class="subnavigation__item">Воронки</div>
-                            <div class="subnavigation__item">Звонки</div>
-                        </div>
-                    </div>
-
-                    <div class="navigation__item navigation__item_hide">
-                        <div class="navigation__header">
-                            <div class="icon icon_settings"></div>
-                            <div class="nav-text">Настройки</div>
-                        </div>
-                        <div class="navigation__body">
-                            <div class="subnavigation__item">Роли</div>
-                            <div class="subnavigation__item">Оповещения</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+  <head>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="page.css" />
+    <link rel="stylesheet" href="cards.css" />
+    <link rel="stylesheet" href="graph.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="sidebar">
+        <div class="sidebar__header">
+          <div class="business-logo"></div>
         </div>
-        <div class="page">
-            <div class="page__top">
-                <div class="page__header">
-                    <div class="page__header-title">
-                        Hair Facker в Бизнесе
-                    </div>
-
-                    <div class="page__header-tool">
-                        <div class="icon icon_bell"></div>
-                        <div class="user">
-                            <div class="user__name">username</div>
-                            <div class="user__avatar"></div>
-                        </div>
-                    </div>
+        <div class="sidebar__body">
+          <div class="company">
+            <div class="company__plate">
+              <div class="company__logo"></div>
+              <div class="company__header">
+                <div class="company__name">Hair Facker</div>
+              </div>
+              <div class="company__tools">
+                <div class="icon-button icon-button_dots">
+                  <div class="icon icon_dots"></div>
                 </div>
-                <div class="page__body">
-                    <div class="cards">
-                        <div class="card">
-                            <div class="card__top">
-                                <div class="ill ill_1"></div>
-                                <div class="card__title">Об организации</div>
-                                <div class="card__description">
-                                    Заполните профиль, чтобы улучшить позицию компании 
-                                    в результатах поиска.
-                                </div>
-                            </div>
-                            <div class="card__bottom">
-                                <div class="item-list">
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_checked" href="#">Контактная информация</a>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_checked" href="#">Часы работы</a>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_unchecked" href="#">Описание и особенности</a>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <span class="item-list__check item-list__check_checked">Подтвердить права</span>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Сотрудники</a>
-                                        <div class="item-list__counter">4</div>
-                                    </div>
-                                </div>
-                            </div>        
-                        </div>
-                        <div class="card">
-                            <div class="card__top">
-                                <div class="ill ill_2"></div>
-                                <div class="card__title">Товары и услуги</div>
-                                <div class="card__description">
-                                    Расскажите о ваших услугах и товарах. 
-                                    Клиенты смогут оставлять заявки онлайн.
-                                </div>
-                            </div>
-                            <div class="card__bottom">
-                                <div class="item-list">
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Услуги</a>
-                                        <div class="item-list__counter">2</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Товары</a>
-                                        <div class="item-list__counter">10</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <span class="item-list__check item-list__check_unchecked">Настроить форму заказа</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__top">
-                                <div class="ill ill_3"></div>
-                                <div class="card__title">Реклама и продвижение</div>
-                                <div class="card__description">
-                                    Приведите новых клиентов и сделайте вашу организацию заметнее.
-                                </div>
-                            </div>
-                            <div class="card__bottom">
-                                <div class="item-list">
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_adv" href="#">Кампания на картах</a>
-                                        <div class="badge">Активна</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_checked" href="#">Добавить акцию</a>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <span class="item-list__check item-list__check_unchecked">Настроить форму заказа</span>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__check item-list__check_unchecked" href="#">Настроить лендинг</a>
-                                    </div>
-                                </div>
-                            </div>                    
-                        </div>
-                        <div class="card">
-                            <div class="card__top">
-                                <div class="ill ill_4"></div>
-                                <div class="card__title">Заказы</div>
-                                <div class="card__description">
-                                    Следите за работой вашей организации.
-                                </div>
-                            </div>
-                            <div class="card__bottom">
-                                <div class="item-list">
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Заказов сегодня</a>
-                                        <div class="item-list__counter">2</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Неотвеченные отзывы</a>
-                                        <div class="item-list__counter item-list__counter_alert">1</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Пропущенные звонки</a>
-                                        <div class="item-list__counter item-list__counter_alert">1</div>
-                                    </div>
-                                    <div class="item-list__item">
-                                        <a class="item-list__title" href="#">Клиентов</a>
-                                        <div class="item-list__counter">24</div>
-                                    </div>    
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
-
-                    <div class="graph">
-                        <div class="graph__header">
-                            Статистика за 30 дней 
-                        </div>
-                        <div class="grid__legend">
-                            <div class="grid__legend-item grid__legend-item_adv">Посмотрели рекламу</div>
-                            <div class="grid__legend-item grid__legend-item_lids">Перешли по рекламе</div>
-                            <div class="grid__legend-item grid__legend-item_order">Заказы</div>
-                        </div>
-                        <div class="graph__grid">
-                            <div>
-                                <div class="gr_date">
-                                    1 января
-                                </div>
-                            </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div>
-                                <div class="gr_order">
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div>
-                                    <div class="gr_order">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                            </div>
-                            <div>
-                                <div class="gr_order">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div>
-                                <div class="gr_order">
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div>
-                                <div class="gr_date">
-                                    31 января
-                                </div>
-                                <div class="gr_order">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="dropdown dropdown_hide">
+                  <div class="dropdown__background"></div>
+                  <div class="dropdown__items">
+                    <div class="dropdown__item">Мои организации</div>
+                    <div class="dropdown__item">Мои рекламные кампании</div>
+                    <div class="dropdown__item">Настройки кабинета</div>
+                    <div class="dropdown__item">Помощь</div>
+                  </div>
                 </div>
-            </div>    
-            <div class="page__footer">
-                <div class="page__footer-left">
-                    <a href="#">Справка</a>
-                    <a href="#">Обратная связь</a>
-                </div>
-                <div class="page__footer-right">
-                    <div class="button button_rounded button_chat">Онлайн-чат</div>
-                </div>
+              </div>
             </div>
+            <div class="select-adress select-adress_hide">
+              <div class="select-adress__input">
+                <div class="select-adress__input-header">
+                  <div class="icon icon_adress"></div>
+                  <div class="nav-text nav-text_selected">
+                    Москва, Полтавская ул., 16
+                  </div>
+                </div>
+                <div class="select-adress__drop icon icon_drop"></div>
+              </div>
+              <div class="select-adress__background"><div></div></div>
+              <div class="select-adress__dropdown">
+                <div class="select-adress__dropdown-inner">
+                  <input
+                    class="address-search"
+                    placeholder="Найти филиал"
+                    type="text"
+                  />
+
+                  <div
+                    class="select-adress__input-header select-adress__input-header_inside select-adress__input-header_selected"
+                  >
+                    <div class="icon icon_adress"></div>
+                    <div class="nav-text">Москва, Полтавская ул., 16</div>
+                  </div>
+
+                  <div
+                    class="select-adress__input-header select-adress__input-header_inside"
+                  >
+                    <div class="icon icon_adress"></div>
+                    <div class="nav-text">Москва, Тверская ул., 48</div>
+                  </div>
+
+                  <div
+                    class="select-adress__input-header select-adress__input-header_inside"
+                  >
+                    <div class="icon icon_adress"></div>
+                    <div class="nav-text">
+                      Санкт-петербург, Гангутская ул., 8
+                    </div>
+                  </div>
+
+                  <div class="sidebar-button sidebar-button_address">
+                    Управлять адресами
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_home"></div>
+                <div class="nav-text">Об организации</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">Контактная информация</div>
+                <div class="subnavigation__item">Особенности</div>
+                <div class="subnavigation__item">Фотографии</div>
+                <div class="subnavigation__item">Отзывы</div>
+                <div class="subnavigation__item">Публикации</div>
+                <div class="subnavigation__item">Сотрудники</div>
+                <div class="subnavigation__item">Акции</div>
+                <div class="subnavigation__item">Формы</div>
+                <div class="subnavigation__item">Сайт</div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_orders"></div>
+                <div class="nav-text">Заказы</div>
+                <div class="nav-counter">2</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">
+                  <span>Заявки</span>
+                  <div class="nav-counter nav-counter_inside">2</div>
+                </div>
+                <div class="subnavigation__item">Календарь</div>
+                <div class="subnavigation__item">
+                  <div class="sidebar-button sidebar-button_icon-add">
+                    Создать заказ
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_clients"></div>
+                <div class="nav-text">Клиенты</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">Аудитория</div>
+                <div class="subnavigation__item">Клиенты</div>
+                <div class="subnavigation__item">
+                  <div class="sidebar-button sidebar-button_icon-add">
+                    Добавить клиента
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_adv"></div>
+                <div class="nav-text">Реклама</div>
+                <div class="nav-counter">1</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">
+                  <span>На картах №234568</span>
+                </div>
+                <div class="subnavigation__item">
+                  <span>Для сайта №234566</span>
+                  <div class="nav-counter nav-counter_inside">1</div>
+                </div>
+                <div class="subnavigation__item">
+                  <div class="sidebar-button sidebar-button_icon-add">
+                    Новая кампания
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_marketing"></div>
+                <div class="nav-text">Маркетинг</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">
+                  Вернуть потерянных №234565
+                </div>
+                <div class="subnavigation__item">
+                  <div class="sidebar-button sidebar-button_icon-add">
+                    Новая кампания
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_tag"></div>
+                <div class="nav-text">Товары и услуги</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">Товары</div>
+                <div class="subnavigation__item">Услуги</div>
+                <div class="subnavigation__item">Сотрудники</div>
+                <div class="subnavigation__item">Акции</div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_stat"></div>
+                <div class="nav-text">Статистика</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">Статистика</div>
+                <div class="subnavigation__item">Воронки</div>
+                <div class="subnavigation__item">Звонки</div>
+              </div>
+            </div>
+
+            <div class="navigation__item navigation__item_hide">
+              <div class="navigation__header">
+                <div class="icon icon_settings"></div>
+                <div class="nav-text">Настройки</div>
+              </div>
+              <div class="navigation__body">
+                <div class="subnavigation__item">Роли</div>
+                <div class="subnavigation__item">Оповещения</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="page">
+        <div class="page__top">
+          <div class="page__header">
+            <div class="page__header-title">
+              Hair Facker в Бизнесе
+            </div>
+
+            <div class="page__header-tool">
+              <div class="icon icon_bell"></div>
+              <div class="user">
+                <div class="user__name">username</div>
+                <div class="user__avatar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="page__body">
+            <div class="cards">
+              <div class="card">
+                <div class="card__top">
+                  <div class="ill ill_1"></div>
+                  <div class="card__title">Об организации</div>
+                  <div class="card__description">
+                    Заполните профиль, чтобы улучшить позицию компании в
+                    результатах поиска.
+                  </div>
+                </div>
+                <div class="card__bottom">
+                  <div class="item-list">
+                    <div class="item-list__item">
+                      <a
+                        class="item-list__check item-list__check_checked"
+                        href="#"
+                        >Контактная информация</a
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <a
+                        class="item-list__check item-list__check_checked"
+                        href="#"
+                        >Часы работы</a
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <a
+                        class="item-list__check item-list__check_unchecked"
+                        href="#"
+                        >Описание и особенности</a
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <span class="item-list__check item-list__check_checked"
+                        >Подтвердить права</span
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#">Сотрудники</a>
+                      <div class="item-list__counter">4</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__top">
+                  <div class="ill ill_2"></div>
+                  <div class="card__title">Товары и услуги</div>
+                  <div class="card__description">
+                    Расскажите о ваших услугах и товарах. Клиенты смогут
+                    оставлять заявки онлайн.
+                  </div>
+                </div>
+                <div class="card__bottom">
+                  <div class="item-list">
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#">Услуги</a>
+                      <div class="item-list__counter">2</div>
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#">Товары</a>
+                      <div class="item-list__counter">10</div>
+                    </div>
+                    <div class="item-list__item">
+                      <span class="item-list__check item-list__check_unchecked"
+                        >Настроить форму заказа</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__top">
+                  <div class="ill ill_3"></div>
+                  <div class="card__title">Реклама и продвижение</div>
+                  <div class="card__description">
+                    Приведите новых клиентов и сделайте вашу организацию
+                    заметнее.
+                  </div>
+                </div>
+                <div class="card__bottom">
+                  <div class="item-list">
+                    <div class="item-list__item">
+                      <a class="item-list__check item-list__check_adv" href="#"
+                        >Кампания на картах</a
+                      >
+                      <div class="badge">Активна</div>
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__check item-list__check_adv" href="#"
+                        >Кампания на сайта</a
+                      >
+                      <div class="badge badge_warning">Ожидает оплаты</div>
+                    </div>
+                    <div class="item-list__item">
+                      <a
+                        class="item-list__check item-list__check_checked"
+                        href="#"
+                        >Добавить акцию</a
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <span class="item-list__check item-list__check_unchecked"
+                        >Настроить форму заказа</span
+                      >
+                    </div>
+                    <div class="item-list__item">
+                      <a
+                        class="item-list__check item-list__check_unchecked"
+                        href="#"
+                        >Настроить лендинг</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__top">
+                  <div class="ill ill_4"></div>
+                  <div class="card__title">Заказы</div>
+                  <div class="card__description">
+                    Следите за работой вашей организации.
+                  </div>
+                </div>
+                <div class="card__bottom">
+                  <div class="item-list">
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#">Заказов сегодня</a>
+                      <div class="item-list__counter">2</div>
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#"
+                        >Неотвеченные отзывы</a
+                      >
+                      <div class="item-list__counter item-list__counter_alert">
+                        1
+                      </div>
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#"
+                        >Пропущенные звонки</a
+                      >
+                      <div class="item-list__counter item-list__counter_alert">
+                        1
+                      </div>
+                    </div>
+                    <div class="item-list__item">
+                      <a class="item-list__title" href="#">Клиентов</a>
+                      <div class="item-list__counter">24</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="graph">
+              <div class="graph__header">
+                Статистика за 30 дней
+              </div>
+              <div class="grid__legend">
+                <div class="grid__legend-item grid__legend-item_adv">
+                  Посмотрели рекламу <span>8k <i>+600</i></span>
+                </div>
+                <div class="grid__legend-item grid__legend-item_lids">
+                  Перешли по рекламе <span>4k <i>+320</i></span>
+                </div>
+                <div class="grid__legend-item grid__legend-item_order">
+                  Заказы <span>48 <i>+2</i></span>
+                </div>
+              </div>
+              <div class="graph__grid">
+                <div>
+                  <div class="gr_date">
+                    1 января
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_adv"></div> 
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_date">
+                    31 января
+                  </div>
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <script src="main.js"></script>
-    </body>
+        <div class="page__footer">
+          <div class="page__footer-left">
+            <a href="#">Справка</a>
+            <a href="#">Обратная связь</a>
+          </div>
+          <div class="page__footer-right">
+            <div class="button button_rounded button_chat">Онлайн-чат</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 .graph {
-    margin: 24px 24px 56px 24px;
+    margin: 24px 24px 64px 24px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -38,13 +38,13 @@
 }
 
 .gr_order > div {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgb(255, 204, 0);
+    background-color: rgba(255, 204, 0, 0.8);
 }
 
 .gr_order > div:hover {
-    background-color: rgb(230, 184, 0);
+    background-color: rgba(230, 184, 0, 1);
 }
 
 .gr_date {
@@ -69,6 +69,16 @@
     padding: 8px 0;
     align-items: center;
     font-size: 14px;
+}
+
+.grid__legend-item > span {
+    color: rgba(0,0,0,0.8);
+    padding-left: 8px;
+}
+
+.grid__legend-item i {
+    color: #51C15C;
+    font-style: normal;
 }
 
 .grid__legend-item:before {
@@ -100,5 +110,23 @@
 
 .grid__legend-item_order:before {
     background-color: rgb(255, 204, 0);
+}
+
+.gr_adv {
+    border-left: 1px dashed #1dac2b89;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top:0;
+}
+
+.gr_adv:before {
+    background-image: url(assets/step_adv.svg);
+    width: 16px;
+    height: 16px;
+    content: '';
+    display: block;
+    background-size: 100%;
+    transform: translate(-10px, 206px);
 }
 
