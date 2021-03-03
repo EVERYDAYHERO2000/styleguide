@@ -2,6 +2,7 @@
     margin: 24px 24px 56px 24px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .graph__header {
@@ -50,8 +51,54 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(0,0,0,0.3);
     white-space: nowrap;
     transform: translateY(20px);
 }
+
+.grid__legend {
+    position: absolute;
+    transform:translateY(48px);
+}
+
+.grid__legend-item {
+    color: rgba(0,0,0,0.6);
+    display: flex;
+    white-space: nowrap;
+    padding: 8px 0;
+    align-items: center;
+    font-size: 12px;
+}
+
+.grid__legend-item:before {
+    margin-right: 8px;
+    content: '';
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.grid__legend-item_adv {
+}
+
+.grid__legend-item_adv:before {
+    background-color: #8B5AF3;
+}
+
+.grid__legend-item_lids {
+
+}
+
+.grid__legend-item_lids:before {
+    background-color: #00E6C5;
+}
+
+.grid__legend-item_order {
+
+}
+
+.grid__legend-item_order:before {
+    background-color: rgb(255, 204, 0);
+}
+
