@@ -132,9 +132,19 @@
     font-size: 12px;
     padding: 4px 8px;
     white-space: nowrap;
+    display: inline;
+}
+
+.badge + .badge {
+    margin-left: 8px;
 }
 
 .badge_warning {
     background-color: rgb(255, 204, 0);
     color: rgb(108, 70, 14);
+}
+
+.badge_alert {
+    background-color: #f83f12;
+    color: #ffffff;
 }

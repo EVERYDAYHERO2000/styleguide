@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="cards.css" />
     <link rel="stylesheet" href="graph.css" />
     <link rel="stylesheet" href="links.css" />
+    <link rel="stylesheet" href="adv.css" />
   </head>
   <body>
     <div class="app">
@@ -234,6 +235,40 @@
           </div>
           <div class="page__body">
 
+            <div class="adv">
+              <div class="adv__header">Рекламная кампания на картах</div>
+              <div class="adv__options">
+                <div class="adv__options-col">
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title" >Идентификатор кампании</div>
+                  <div>№234568</div>
+                </div>
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title">Статус</div>
+                  <div><div class="badge badge_alert">Требуется настройка</div><div class="badge">Активна</div></div>
+                </div>
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title">Целевая страница</div>
+                  <div><a href="#">Карточка организации</a></div>
+                </div>
+              </div>
+              <div class="adv__options-col">
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title">Владелец</div>
+                  <div><div class="user__name">username</div></div>
+                </div>
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title">Дата запуска</div>
+                  <div>23.01.2021</div>
+                </div>
+                <div class="adv__options-item">
+                  <div class="adv__options-item-title">Дата завершения</div>
+                  <div>23.02.2021</div>
+                </div> 
+                </div> 
+              </div>
+            </div>  
+
             <div class="cards">
               <div class="card">
                 <div class="card__top">
@@ -285,9 +320,15 @@
                 <div class="card__bottom">
                   <div class="item-list">
                     <div class="item-list__item">
-                      <span class="item-list__check item-list__check_unchecked">
-                        Цель: 3 цели из Метрики
+                      <span class="item-list__check item-list__check_checked">
+                        Цель: Онлайн запись
                       </span>
+                    </div>
+                    <div class="item-list__item">
+                      <span class="item-list__check item-list__check_unchecked">
+                        Настроить форму заказа
+                      </span>
+                      <div class="badge badge_alert">Не настроена</div>
                     </div>
                   </div>
                 </div>
@@ -314,6 +355,112 @@
                 </div>
               </div>
               
+            </div>
+
+            <div class="graph">
+              <div class="graph__header">
+                <span>Статистика за 30 дней</span>
+                <a href="#">Вся статистика</a>
+              </div>
+              <div class="grid__legend">
+                <div class="grid__legend-item grid__legend-item_adv">
+                  Посмотрели рекламу <span>8k <i>+600</i></span>
+                </div>
+                <div class="grid__legend-item grid__legend-item_lids">
+                  Перешли по рекламе <span>4k <i>+320</i></span>
+                </div>
+                <div class="grid__legend-item grid__legend-item_order">
+                  Заказы <span>48 <i>+2</i></span>
+                </div>
+              </div>
+              <div class="graph__grid">
+                <div>
+                  <div class="gr_date">
+                    1 января
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                    <div class="gr_order">
+                        <div></div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_adv"></div> 
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div>
+                  <div class="gr_order">
+                    <div></div>
+                  </div>
+                </div>
+                <div></div>
+                <div>
+                    <div class="gr_order">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                  <div class="gr_date">
+                    31 января
+                  </div>
+                  <div class="gr_order">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
