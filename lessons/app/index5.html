@@ -1,0 +1,70 @@
+<body>
+<style>
+
+    .rect {
+        animation: rr 1s ease forwards;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    @keyframes rr {
+        0% {
+            transform: translateY(0px) scale(1);
+        }
+        100% {
+            transform: translateY(10px) scale(1.1);
+        }
+    }
+
+</style>    
+<script>
+    
+    const body = document.querySelector('body');
+
+
+    let color = 'red';
+    let trigger = false;
+
+    const input = document.createElement('input');
+    input.setAttribute('type','color');
+    input.value = color;
+    body.append(input);
+
+    input.addEventListener('change', (e)=>{
+
+        color = e.target.value;
+
+    })
+
+    body.addEventListener('mousedown', (e)=> {
+
+        trigger = true;
+
+    }) 
+    
+    body.addEventListener('mouseup', (e)=> {
+
+        trigger = false;
+
+    }) 
+
+    body.addEventListener('mousemove', (e)=> {
+
+        if (trigger){
+            const rect = document.createElement('div');
+            rect.style.backgroundColor = color;
+            rect.classList.add('rect');
+
+            rect.style.top = e.clientY + 'px';
+            rect.style.left = e.clientX + 'px';
+            body.append(rect);
+        }
+
+    });
+
+</script>    
+</body>

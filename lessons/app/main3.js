@@ -29,14 +29,11 @@
     });
     $result.classList.add('result');
 
-
     $body.append($appDescription);
     $body.append(createField( 'Initial Concentration', $initialConcentration ));
     $body.append(createField( 'Need Concentration', $needConcentration ));
     $body.append($button);
     $body.append($result);
-
-
 
     function createInput(placeholder, type) {
         type = type || 'number';

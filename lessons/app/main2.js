@@ -11,9 +11,9 @@ const $concentration = createInput('%', 'number');
 const $result = document.createElement('p');
 
 
-$appDescription.innerHTML = `<span> Here you can calculate the weight of 
-water, if you know the weight of dry glue 
-and the concentration that you need: </span>`;
+$appDescription.textContent = `Here you can calculate the weight of 
+water, if you know the weight of dry glue
+and the concentration that you need: `;
 $appDescription.classList.add('app-description');
 
 $button.classList.add('button');
