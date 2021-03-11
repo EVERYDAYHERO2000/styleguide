@@ -2,18 +2,17 @@
     background-color: rgb(235, 227, 211);
     font-size: 18px;
     font-family: sans-serif;
-    color: rgb(7, 7, 102);
+    color: rgb(2,2,95);
 }
 
 .app-description {
     font-size: 20px;
     line-height: 1.45;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 10px 20px 0 20px;
 }
 
 .form-field {
-    margin: 20px 5%;
+    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,9 +38,10 @@
 
 .button {
     font-size: 18px;
-    color: #fff;
+    color: #ebe3db;
     padding: 10px;
-    width: 100%;
+    width: calc(100% - 40px);
+    margin: 20px;
     border-radius: 8px;
     background-color: rgb(180, 58, 42);
     border: none;

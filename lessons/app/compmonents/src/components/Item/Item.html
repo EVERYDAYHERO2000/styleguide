@@ -1,0 +1,50 @@
+<template>
+    <div class="item">
+        <div ref="icon" class="item__icon item__icon_ellipse"></div>
+        <div class="item__title">
+            ${title}
+        </div>
+    </div>
+</template>
+<script>
+    ({
+        props:{
+            title:{
+                type: "String"
+            }
+        },
+        mounted: function(e){
+            const icon = e.getAttribute("icon") || "hi";
+            const ref = e.querySelector("[ref='icon']");
+            console.log(e.innerText);
+         //   if (icon){
+                ref.classList.add(`item__icon_${icon}`)
+           //  }
+        }
+    })
+</script>
+<style>
+    .item {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+    }
+        .item__icon{
+            width: 24px;
+            height: 24px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+            .item__icon_ellipse{
+                background-image: url(@component/Ellipse.svg);
+            }
+            .item__icon_polygon{
+                background-image: url(@component/Polygon.svg);
+            }
+            .item__icon_rectangle{
+                background-image: url(@component/Rectangle.svg);
+            }
+        .item__title{
+            margin: 0 0 0 8px;
+        }
+</style>
